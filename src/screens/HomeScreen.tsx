@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, Button, Switch } from 'react-native'
-import styles from '../../styles/globalstyles'
+import styles from "./styles/globalstyles"
 
-const HomeScreen: React.FC = () => {
+const HomeScreen: React.FC = ({navigation}) => {
 
   const [mode, setMode] = useState<boolean>(false)
 
@@ -13,7 +13,10 @@ const HomeScreen: React.FC = () => {
         value={mode}
         onValueChange={() => setMode((value: boolean) => !value)}
       />
-      <Button title='My Profile' />
+      <Button 
+        title='Benefactor Profile' 
+        onPress={() => navigation.navigate("Benefactor")}
+      />
     </View>
   )
 }
