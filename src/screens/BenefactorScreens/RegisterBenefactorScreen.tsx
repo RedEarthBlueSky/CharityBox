@@ -9,7 +9,7 @@ const RegisterBenefactorScreen = () => {
   )
 }
 
-export default RegisterBenefactorScreen
+export { RegisterBenefactorScreen }
 
 const styles = StyleSheet.create({
   H1: {

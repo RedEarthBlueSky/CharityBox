@@ -1,7 +1,8 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
+import styles from "../styles/globalstyles"
 
-const CauseScreen: React.FC = () => {
+const CauseDashboardScreen: React.FC = () => {
   return (
     <View>
       <Text style={styles.H1Bold}>Cause Screen</Text>
@@ -15,14 +16,4 @@ const CauseScreen: React.FC = () => {
   )
 }
 
-export default CauseScreen
-
-const styles = StyleSheet.create({
-  H1: {
-    fontSize: 32,
-  },
-  H1Bold: {
-    fontSize: 32,
-    fontWeight: 'bold',
-  }
-})
+export  { CauseDashboardScreen }

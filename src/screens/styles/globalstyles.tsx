@@ -8,16 +8,24 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   H1: {
-    fontSize: 32,
+    fontSize: 40,
   },
   H1Bold: {
-    fontSize: 32,
+    fontSize: 40,
     fontWeight: 'bold',
-    textAlign: 'center',
+  },
+  H2: {
+    fontSize: 30,
   },
   H2Bold: {
-    fontSize: 26,
+    fontSize: 30,
     fontWeight: 'bold',
+  },
+  H3: {
+    fontSize: 22,
+  },
+  P: {
+    fontSize: 16,
   }
 })
 

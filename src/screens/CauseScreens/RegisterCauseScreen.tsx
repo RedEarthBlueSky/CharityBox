@@ -9,7 +9,7 @@ const RegisterCauseScreen = () => {
   )
 }
 
-export default RegisterCauseScreen
+export { RegisterCauseScreen }
 
 const styles = StyleSheet.create({
   H1: {

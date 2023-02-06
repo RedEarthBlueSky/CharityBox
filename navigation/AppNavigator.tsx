@@ -1,8 +1,14 @@
 import * as React from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { 
+  createNativeStackNavigator, 
+} from '@react-navigation/native-stack'
 
-import HomeScreen from '../src/screens/HomeScreen'
-import BenefactorProfileScreen from '../src/screens/BenefactorScreens/BenefactorProfileScreen'
+import { 
+  HomeScreen,
+  RegisterBenefactorScreen,
+  RegisterCauseScreen,
+  BenefactorInformationScreen,
+} from '../src/Screens'
 
 const AppNavigator = () => {
 
@@ -15,8 +21,16 @@ const AppNavigator = () => {
         component={HomeScreen} 
       />
       <Stack.Screen 
-        name="Benefactor" 
-        component={BenefactorProfileScreen} 
+        name="Create Benefactor Profile" 
+        component={RegisterBenefactorScreen} 
+      />
+      <Stack.Screen 
+        name="Create Cause Profile"
+        component={RegisterCauseScreen}
+      />
+      <Stack.Screen 
+        name="Benefactor Information"
+        component={BenefactorInformationScreen}
       />
     </Stack.Navigator>
   )
