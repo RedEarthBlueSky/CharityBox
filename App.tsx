@@ -8,11 +8,9 @@ import AppNavigator from './navigation/AppNavigator'
 
 export default function App() {
   return (
-    <View>
       <NavigationContainer>
-        <StatusBar style="auto" />
-        <AppNavigator />
+          <StatusBar style="auto" />
+          <AppNavigator />
       </NavigationContainer>
-    </View>
   );
 }

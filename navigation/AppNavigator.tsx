@@ -8,6 +8,7 @@ import {
   RegisterBenefactorScreen,
   RegisterCauseScreen,
   BenefactorInformationScreen,
+  LogInScreen,
 } from '../src/Screens'
 
 const AppNavigator = () => {
@@ -31,6 +32,10 @@ const AppNavigator = () => {
       <Stack.Screen 
         name="Benefactor Information"
         component={BenefactorInformationScreen}
+      />
+      <Stack.Screen 
+        name="Log In"
+        component={LogInScreen}
       />
     </Stack.Navigator>
   )

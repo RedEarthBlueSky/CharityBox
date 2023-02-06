@@ -10,3 +10,6 @@ export * from './BenefactorScreens/BenefactorInformationScreen'
 export * from './CauseScreens/RegisterCauseScreen'
 export * from './CauseScreens/CauseDashboardScreen'
 
+//  Authentication Screens
+export * from './Authentication/LogInScreen'
+

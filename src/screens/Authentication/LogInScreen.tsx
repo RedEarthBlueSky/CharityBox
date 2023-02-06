@@ -1,0 +1,14 @@
+import { View, Text } from 'react-native'
+import React from 'react'
+
+import styles from '../../Screens/styles/globalstyles'
+
+const LogInScreen = () => {
+  return (
+    <View>
+      <Text style={styles.H1Bold}>Log In</Text>
+    </View>
+  )
+}
+
+export { LogInScreen }

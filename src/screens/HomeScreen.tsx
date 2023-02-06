@@ -1,19 +1,24 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, Button, Switch } from 'react-native'
+import { View, Text, StyleSheet, Button, Switch, Appearance } from 'react-native'
 
 import { LineBreak } from '../Components'
 import styles from "./styles/globalstyles"
 
 const HomeScreen: React.FC = ({navigation}) => {
-
   const {navigate} = navigation
-  const [mode, setMode] = useState<boolean>(false)
 
+  const [theme, setTheme] = useState<boolean>(true)
+
+  console.log(theme)
   return (
-    <View style={styles.container}>
+    <View style={theme ? styles.lightcontainer : styles.darkcontainer}>
+      <Button 
+        title='Log In' 
+        onPress={() => navigate("Log In")}
+      />
       <Switch 
-        value={mode}
-        onValueChange={() => setMode((value: boolean) => !value)}
+        value={theme}
+        onValueChange={() => setTheme(!theme)}
       />
       <Text style={styles.H1Bold}>Charity Box</Text>
       <Text style={styles.H3}>The Manage your Gift Giving App</Text>
