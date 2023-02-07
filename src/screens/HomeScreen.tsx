@@ -1,48 +1,51 @@
-import React, { useState } from 'react'
-import { View, Text, StyleSheet, Button, Switch, Appearance } from 'react-native'
+import React, { useState, useContext } from 'react'
+import { View, Text, StyleSheet, Button, Switch } from 'react-native'
+import { EventRegister } from 'react-native-event-listeners'
 
-import { LineBreak } from '../Components'
+import { 
+  BenefactorIntroComponent,
+  CauseIntroComponent,
+  LineBreakComponent,
+} from '../Components'
 import styles from "./styles/globalstyles"
+//  grab ahold of the context
+import themeContext from './styles/themeContext'
 
-const HomeScreen: React.FC = ({navigation}) => {
-  const {navigate} = navigation
+const HomeScreen: React.FC = ({ navigation }) => {
+  const theme = useContext(themeContext)
 
-  const [theme, setTheme] = useState<boolean>(true)
+  //  give a true or false value to the state from switch
+  const [darkMode, setDarkMode] = useState<boolean>(false)
 
-  console.log(theme)
+  //  let's take a look at the value of the theme state
+  console.log(darkMode)
+
   return (
-    <View style={theme ? styles.lightcontainer : styles.darkcontainer}>
+    <View style={[
+      styles.container,
+      {backgroundColor: theme.background }
+    ]}>
       <Button 
         title='Log In' 
-        onPress={() => navigate("Log In")}
+        onPress={() => navigation.navigate("Log In")}
       />
       <Switch 
-        value={theme}
-        onValueChange={() => setTheme(!theme)}
+        value={darkMode}
+        onValueChange={(value) => { 
+          setDarkMode(!darkMode)
+          EventRegister.emit('ChangeTheme', value)
+        }}
       />
-      <Text style={styles.H1Bold}>Charity Box</Text>
+      <Text style={[
+        styles.H1Bold,
+        { color: theme.color }
+      ]}>Charity Box</Text>
       <Text style={styles.H3}>The Manage your Gift Giving App</Text>
-      <LineBreak />
-      <Text style={styles.H2Bold}>Benefactor</Text>
-      <Text style={styles.H3}>An individual who wishes to donate.</Text>
-      <Text style={styles.P}> Default font size </Text>
-      <Button 
-        title='Create Benefactor Profile' 
-        onPress={() => navigate("Create Benefactor Profile")}
-      />
-      <Button 
-        title='Benefactors Find out More' 
-        onPress={() => navigate("Benefactor Information")}
-      />
-      <LineBreak />
-      <Text style={styles.H2Bold}>Cause</Text>
-      <Text style={styles.H3}>
-        A chairty or company who wishes to aceept donations.
-      </Text>
-      <Button 
-        title='Create Cause Profile' 
-        onPress={() => navigate("Create Cause Profile")}
-      />
+      <LineBreakComponent />
+      {/* Need to pass the navigation object to the component */}
+      <BenefactorIntroComponent navigation={navigation}/>
+      <LineBreakComponent />
+      <CauseIntroComponent navigation={navigation} />
     </View>
   )
 }

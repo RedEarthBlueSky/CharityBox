@@ -6,7 +6,7 @@ import styles from '../../Screens/styles/globalstyles'
 const LogInScreen = () => {
   return (
     <View>
-      <Text style={styles.H1Bold}>Log In</Text>
+      <Text style={styles.H1Bold}>Log In Screen</Text>
     </View>
   )
 }

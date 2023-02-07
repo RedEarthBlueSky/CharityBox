@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import styles from './LineBreakStyles'
 
-const LineBreak = () => {
+const LineBreakComponent = () => {
   return (
     <View>
       <Text style={styles.lineBreak}></Text>
@@ -11,4 +11,4 @@ const LineBreak = () => {
   )
 }
 
-export { LineBreak }
+export { LineBreakComponent }

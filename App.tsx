@@ -4,8 +4,6 @@ import { Text, View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import AppNavigator from './navigation/AppNavigator'
 
-// import styles from './src/Screens/styles/globalstyles'
-
 export default function App() {
   return (
       <NavigationContainer>
