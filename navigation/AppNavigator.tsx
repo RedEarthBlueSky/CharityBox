@@ -14,6 +14,7 @@ import {
 
 import theme from '../src/Screens/styles/theme'
 import themeContext from '../src/Screens/styles/themeContext'
+import { DarkTheme, DefaultTheme } from '@react-navigation/native'
 
 const AppNavigator = () => {
   const Stack = createNativeStackNavigator()
@@ -22,7 +23,7 @@ const AppNavigator = () => {
   useEffect(() => {
     const listener = EventRegister.addEventListener('ChangeTheme', (data) => {
       setDarkMode(data)
-      console.log('Data value from useEffect in AppNavigator: ', data)
+      // console.log('Data value from useEffect in AppNavigator: ', data)
     })
     return () => {
       EventRegister.removeAllListeners(listener)
@@ -33,7 +34,10 @@ const AppNavigator = () => {
     <themeContext.Provider 
       value={darkMode === true ? theme.dark : theme.light}
     >
-      <Stack.Navigator initialRouteName='Home'>
+      <Stack.Navigator 
+        initialRouteName='Home'
+        // theme={darkMode === true ? DarkTheme : DefaultTheme}
+      >
         <Stack.Screen 
           name="Home" 
           component={HomeScreen} 

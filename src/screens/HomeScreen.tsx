@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { View, Text, StyleSheet, Button, Switch } from 'react-native'
+import { View, Text, StyleSheet, Button, Switch, TouchableHighlightComponent } from 'react-native'
 import { EventRegister } from 'react-native-event-listeners'
 
 import { 
@@ -7,24 +7,17 @@ import {
   CauseIntroComponent,
   LineBreakComponent,
 } from '../Components'
-import styles from "./styles/globalstyles"
 //  grab ahold of the context
 import themeContext from './styles/themeContext'
+import styles from "./styles/globalstyles"
+
 
 const HomeScreen: React.FC = ({ navigation }) => {
   const theme = useContext(themeContext)
-
-  //  give a true or false value to the state from switch
   const [darkMode, setDarkMode] = useState<boolean>(false)
 
-  //  let's take a look at the value of the theme state
-  console.log(darkMode)
-
   return (
-    <View style={[
-      styles.container,
-      {backgroundColor: theme.background }
-    ]}>
+    <View style={[styles.container,{backgroundColor: theme.background }]}>
       <Button 
         title='Log In' 
         onPress={() => navigation.navigate("Log In")}
@@ -36,16 +29,29 @@ const HomeScreen: React.FC = ({ navigation }) => {
           EventRegister.emit('ChangeTheme', value)
         }}
       />
-      <Text style={[
-        styles.H1Bold,
-        { color: theme.color }
-      ]}>Charity Box</Text>
-      <Text style={styles.H3}>The Manage your Gift Giving App</Text>
+      <Text style={[styles.H1Bold,{color: theme.color}]}>Charity Box</Text>
+      <Text 
+        style={[
+          styles.H3,
+          { color: theme.color }
+        ]}
+      >
+          The Manage your Gift Giving App
+      </Text>
+
       <LineBreakComponent />
-      {/* Need to pass the navigation object to the component */}
-      <BenefactorIntroComponent navigation={navigation}/>
+
+      <BenefactorIntroComponent 
+        navigation={navigation}
+        theme={theme}
+      />
+
       <LineBreakComponent />
-      <CauseIntroComponent navigation={navigation} />
+
+      <CauseIntroComponent 
+        navigation={navigation} 
+        theme={theme}
+      />
     </View>
   )
 }

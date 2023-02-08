@@ -1,42 +1,42 @@
 export const BenefactorInformationMenu = [
   {
-    index: 1,
-    name: 'Give to a Charity',
-    component:  'GivingToCharitiesScreen',
-  },
-  {
-    index: 2,
     name: 'Donate Now',
     component: 'DonateNowScreen',
+    additional: 'This covers the give to Charity Screen it is pointless to over complicate the process = KIS'
   },
   {
-    index: 3,
-    name: 'Private Philanthropy',
-    component: 'PriviatePhilanthropyScreen',
-  },
-  {
-    index: 4,
     name: 'Leave a Legacy',
     component: 'LeaveALegacyScreen',
+    additional: 'Leave a gift in your will.  Tie to a will writing service.'
   },
   {
-    index: 5,
-    name: 'Grants',
-    component: 'GrantsScreen'
+    name: 'Create a Grant',
+    component: 'GrantsScreen',
+    additional:  
+        'Grant Giving Funds also known as Charitable Funds' 
+      + ' provide financial help in the form of a grant.'  
+      + '  Grants can be money, services or product that' 
+      + ' do not have to be paid back.  It can also be advice,' 
+      + ' information and support.'
   },
   {
-    index: 6,
+    name: 'Tax Relief',
+    component: 'To be decided',
+    additional: 'Part of process and FAQs'
+  },
+  {
     name: 'Services and Professional Advisors',
     component: 'ServicesProfessionalAdvisorsScreen',
+    additional:  'NOT REQUIRED:  Financial Advisers and such.  This is is Philanthropic services for larger clients and not needed as this point.'
   },
   {
-    index: 7,
-    name: 'More about Giving',
-    component: 'MoreAboutGivingScreen',
+    name: 'Payroll Giving',
+    component: 'PayrollGivingScreen',
+    additional:  'Give more for less Payroll Giving.  SLIDER!  The breakdown is here just outline what they have https://www.cafonline.org/my-personal-giving/plan-your-giving/caf-give-as-you-earn'
   },
   {
-    index: 8,
     name: 'Help and Support',
     component: 'HelpAndSupportScreen',
+    additional:  'I guess this could also be seen as Contact Us'
   },
 ]

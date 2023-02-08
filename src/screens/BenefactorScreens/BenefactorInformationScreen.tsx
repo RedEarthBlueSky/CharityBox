@@ -1,15 +1,16 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import React, { useContext } from 'react'
 import styles from "../styles/globalstyles"
 import { BenefactorInformationMenu } from '../data/helperdata'
 import themeContext from '../styles/themeContext'
 
-const BenefactorMenu = BenefactorInformationMenu.map(MenuItem => {
-  const { index, name, component } = MenuItem
+const BenefactorMenu = BenefactorInformationMenu.map((MenuItem, index) => {
+  const { name, component, additional } = MenuItem
   return (
-    <View key={index}>
-      <Text style={styles.H3}> {index}: {name}</Text>
-      <Text>Component: {component}</Text>
+    <View style={styles.container} key={index}>
+      <Text style={styles.H3Bold}>{name}</Text>
+      <Text style={styles.H4Bold}>Component: {component}</Text>
+      <Text style={styles.H4}>{additional}</Text>
     </View>
   )
 })
@@ -19,9 +20,11 @@ const BenefactorInformationScreen = () => {
   return (
     <View style={[styles.container,{backgroundColor: theme.background }]}>
       <Text style={[styles.H1Bold,{ color: theme.color }]}>
-        Benefactor Information
+        Benefactors
       </Text>
-      {BenefactorMenu}
+      <ScrollView>
+        {BenefactorMenu}
+      </ScrollView>
     </View>
   )
 }
