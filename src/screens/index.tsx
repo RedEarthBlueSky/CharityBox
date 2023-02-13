@@ -1,5 +1,6 @@
 //  Main Screens
 export * from './HomeScreen'
+export * from './RegisterScreen'
 
 //  Benefactor Screens
 export * from './BenefactorScreens/RegisterBenefactorScreen'

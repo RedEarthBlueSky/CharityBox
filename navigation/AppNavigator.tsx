@@ -10,6 +10,7 @@ import {
   RegisterCauseScreen,
   BenefactorInformationScreen,
   LogInScreen,
+  RegisterScreen,
 } from '../src/Screens'
 
 import theme from '../src/Screens/styles/theme'
@@ -35,12 +36,16 @@ const AppNavigator = () => {
       value={darkMode === true ? theme.dark : theme.light}
     >
       <Stack.Navigator 
-        initialRouteName='Home'
+        initialRouteName='Register'
         // theme={darkMode === true ? DarkTheme : DefaultTheme}
       >
         <Stack.Screen 
           name="Home" 
           component={HomeScreen} 
+        />
+        <Stack.Screen 
+          name="Register"
+          component={RegisterScreen}
         />
         <Stack.Screen 
           name="Create Benefactor Profile" 
