@@ -36,7 +36,7 @@ const AppNavigator = () => {
       value={darkMode === true ? theme.dark : theme.light}
     >
       <Stack.Navigator 
-        initialRouteName='Register'
+        initialRouteName='Home'
         // theme={darkMode === true ? DarkTheme : DefaultTheme}
       >
         <Stack.Screen 
