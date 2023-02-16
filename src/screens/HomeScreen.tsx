@@ -7,6 +7,7 @@ import {
   CauseIntroComponent,
   LineBreakComponent,
   MainWrapperComponent,
+  PageTitleComponent
 } from '../Components'
 //  grab ahold of the context
 import themeContext from './styles/themeContext'
@@ -33,15 +34,12 @@ const HomeScreen: React.FC = ({ navigation }) => {
             EventRegister.emit('ChangeTheme', value)
           }}
         />
-        <Text style={[styles.H1Bold,{color: theme.color}]}>Charity Box</Text>
-        <Text 
-          style={[
-            styles.H3,
-            { color: theme.color }
-          ]}
-        >
-            The Manage your Gift Giving App
-        </Text>
+
+        <PageTitleComponent 
+          title='Charity Box'
+          slug='The Manage your Gift Giving App'
+          theme={theme}
+        />
 
         <LineBreakComponent />
 
