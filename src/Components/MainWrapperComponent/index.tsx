@@ -9,7 +9,7 @@ type MainWrapperProps = {
   children:  React.ReactNode; //  child prop type
 }
 
-const MainWrapperComponent = (props: MainWrapperProps) => {
+const MainWrapperComponent:React.FC<MainWrapperProps> = (props: MainWrapperProps) => {
   return (
     <View style={styles.MainWrapper}>
       {props.children}

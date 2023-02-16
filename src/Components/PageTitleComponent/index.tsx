@@ -8,6 +8,7 @@ interface ThemeProps {
   color: string
   theme: string
 }
+
 interface PageTitleProps {
   title: string
   slug: string

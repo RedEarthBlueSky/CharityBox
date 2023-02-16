@@ -3,11 +3,12 @@ import { View, Text, StyleSheet, Button, Switch, TouchableHighlightComponent } f
 import { EventRegister } from 'react-native-event-listeners'
 
 import { 
+  BasicButtonComponent,
   BenefactorIntroComponent,
   CauseIntroComponent,
   LineBreakComponent,
   MainWrapperComponent,
-  PageTitleComponent
+  PageTitleComponent,
 } from '../Components'
 //  grab ahold of the context
 import themeContext from './styles/themeContext'
@@ -23,9 +24,9 @@ const HomeScreen: React.FC = ({ navigation }) => {
       <View 
         style={[styles.container,{backgroundColor: theme.background }]}
       >
-        <Button 
-          title='Log In' 
-          onPress={() => navigation.navigate("Log In")}
+        <BasicButtonComponent 
+          title='Log In'
+          action={() => navigation.navigate("Log In")}
         />
         <Switch 
           value={darkMode}
