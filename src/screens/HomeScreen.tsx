@@ -6,7 +6,6 @@ import {
   BasicButtonComponent,
   BenefactorIntroComponent,
   CauseIntroComponent,
-  LineBreakComponent,
   MainWrapperComponent,
   PageTitleComponent,
 } from '../Components'
@@ -14,11 +13,9 @@ import {
 import themeContext from './styles/themeContext'
 import styles from "./styles/globalstyles"
 
-
 const HomeScreen: React.FC = ({ navigation }) => {
   const theme = useContext(themeContext)
   const [darkMode, setDarkMode] = useState<boolean>(false)
-
   return (
     <MainWrapperComponent>
       <View 
@@ -27,6 +24,7 @@ const HomeScreen: React.FC = ({ navigation }) => {
         <BasicButtonComponent 
           title='Log In'
           action={() => navigation.navigate("Log In")}
+          theme={theme}
         />
         <Switch 
           value={darkMode}
@@ -35,22 +33,15 @@ const HomeScreen: React.FC = ({ navigation }) => {
             EventRegister.emit('ChangeTheme', value)
           }}
         />
-
         <PageTitleComponent 
           title='Charity Box'
           slug='The Manage your Gift Giving App'
           theme={theme}
         />
-
-        <LineBreakComponent />
-
         <BenefactorIntroComponent 
           navigation={navigation}
           theme={theme}
         />
-
-        <LineBreakComponent />
-
         <CauseIntroComponent 
           navigation={navigation} 
           theme={theme}

@@ -23,6 +23,7 @@ const BenefactorIntroComponent: React.FC = ({navigation, theme}) => {
         title='Benefactors Find out More' 
         onPress={() => navigation.navigate("Benefactor Information")}
       />
+      <LineBreakComponent />
     </View>
   )
 }
