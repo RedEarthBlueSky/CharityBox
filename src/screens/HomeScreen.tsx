@@ -6,7 +6,7 @@ import {
   BasicButtonComponent,
   BenefactorIntroComponent,
   CauseIntroComponent,
-  MainWrapperComponent,
+  ScreenWrapperComponent,
   PageTitleComponent,
 } from '../Components'
 //  grab ahold of the context
@@ -17,7 +17,7 @@ const HomeScreen: React.FC = ({ navigation }) => {
   const theme = useContext(themeContext)
   const [darkMode, setDarkMode] = useState<boolean>(false)
   return (
-    <MainWrapperComponent>
+    <ScreenWrapperComponent>
       <View 
         style={[styles.container,{backgroundColor: theme.background }]}
       >
@@ -47,7 +47,7 @@ const HomeScreen: React.FC = ({ navigation }) => {
           theme={theme}
         />
       </View>
-    </MainWrapperComponent>
+    </ScreenWrapperComponent>
   )
 }
 

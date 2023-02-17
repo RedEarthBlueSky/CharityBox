@@ -1,13 +1,23 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, {useContext} from 'react'
 
-import { AddressUIComponent } from '../Components'
+import { 
+  AddressUIComponent,
+  ScreenWrapperComponent,
+  PageTitleComponent,
+} from '../Components'
 import styles from './styles/globalstyles'
+import themeContext from './styles/themeContext'
 
-const RegisterScreen = () => {
+const RegisterScreen:React.FC = () => {
+  const theme = useContext(themeContext)
   return (
     <View>
-      <Text style={styles.H1Bold}>Register Screen</Text>
+      <PageTitleComponent
+        title='Register Screen'
+        slug='Duplicate for Benefactor and Cause' 
+        theme={theme}   
+      />
       <AddressUIComponent />
     </View>
   )
