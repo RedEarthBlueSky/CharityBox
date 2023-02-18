@@ -40,17 +40,6 @@ const AddressUIComponent: React.FC = () => {
     getSelectionLinesFromSPLServer()
   }
 
-  interface SPLFetchListProps {
-    postcode: string
-    url: string
-    data: {
-      found: number
-      credits_display_text: string
-      errormessage: string
-      url: string
-    }
-  }
-
   //  Fetch list from server for display
   const SPLFetchList = async (postcode: string) => {
     const fetchData = (url: string): Promise<void> => {
@@ -82,14 +71,27 @@ const AddressUIComponent: React.FC = () => {
   return (
     <View>
       <Text style={styles.H2Bold}>Address UI Component</Text>
-      <SPLSearch />
-      <SPLSelectList />
-      <AddressUI />
-      <Text>
-        This example shows how to implements a Postcode address Finder
-        using React Native.  It returns example addresses no matter what
-        is entered as  search Postcode.  The UI is customizable for the developer.
-      </Text>
+      <AddressRecProvider>
+
+        <SPLSearch 
+          SPLSearchButton={SPLSearchButton} 
+          errorText={errorTxt} 
+        />
+
+        {showSearchList &&
+          <SPLSelectList 
+            datakey={datakey}
+            selectionLines={selectionLines}
+            showSearchList={showSearchList}
+            setShowSearchList={setShowSearchList}
+          />
+        }
+
+        {!showSearchList &&
+          <AddressUI />  //  there is a 1 added in the code what's this?
+        }
+
+      </AddressRecProvider>
     </View>
   )
 }
