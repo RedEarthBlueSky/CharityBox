@@ -10,6 +10,9 @@ import {
  import { AddressRecProvider } from './components/AddressRec'
 
 const AddressUIComponent: React.FC = () => {
+  //  My account
+  //  https://www.simplylookupconsole.co.uk/A2CustomerAccount/main.aspx?coid=3333347653_30_30_______
+  
   // VARIABLE(S?)Datakey simplypostcode external use for a public facing app
   const datakey = 'W_5ADFE8B4C9B549918715857FEE048E'
 

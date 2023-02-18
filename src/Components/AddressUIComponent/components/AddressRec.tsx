@@ -5,7 +5,7 @@ export const AddressRecContext = createContext()
 
 //  ============
 //  AdressProvider is used to store the address info RECORDS to displa on the page so the user
-//  can edit values or found by Simply Postcode
+//  can edit the values found by Simply Postcode
 //  ============
 
 interface AddressRecordProps {
@@ -25,7 +25,8 @@ interface AddressArgumentProps {
 
 //  props type is hacky sort it out later
 const AddressRecProvider = (props: AddressArgumentProps) => {
-  //  create state for Address Records
+
+  //  create state to store Address Records
   const [addressRec, setAddressRec] = useState<AddressRecordProps>({
     "company": "",
     "line1": "",
