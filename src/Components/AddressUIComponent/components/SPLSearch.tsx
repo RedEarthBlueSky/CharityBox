@@ -13,78 +13,29 @@ const SPLSearch = ({SPLSearchButton, errorText}) => {
 
   return (
     <View>
-      <View style={formStyles.SPLheader}>
-        <View style={formStyles.formControl}>
-            <Text style={formStyles.SPLInputLabel}>
+      <View style={styles.SPLheader}>
+        <View style={styles.formControl}>
+            <Text style={styles.SPLInputLabel}>
               Search by Postcode:
             </Text>
             <TextInput 
               placeholder='Postcode'
-              style={formStyles.SPLTextInput}
+              style={styles.SPLTextInput}
               onChangeText={newText => setSearchBy(newText)}
               defaultValue={searchBy}
             />
         </View>
         <Pressable
           onPress={() => SPLSearchButton(searchBy)}
-          style={formStyles.SPLbtn}
+          style={styles.SPLbtn}
         >
-          <Text style={formStyles.SPLButtonText}>Submit</Text>
+          <Text style={styles.SPLButtonText}>Submit</Text>
         </Pressable>
-
-        <Text style={formStyles.SPLerrText}>{errorText}</Text>
       </View>
+      <Text style={styles.SPLerrText}>{errorText}</Text>
       <LineBreakComponent />
     </View>
   )
 }
 
 export { SPLSearch }
-
-const formStyles = StyleSheet.create({
-  SPLheader: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignContent: 'center',
-    marginBottom: 20,
-    marginTop: 20,
-  },
-  formControl: {
-    marginBottom: 2,
-    marginTop: 2,
-  },
-  SPLInputLabel: {
-    fontSize: 18,
-    marginBottom: 5,
-  },
-  SPLTextInput: {
-    borderColor: 'black',
-    borderWidth: 1,
-    color: 'grey',
-    fontSize: 22,
-    height: 50,
-    paddingHorizontal: 10,
-    paddingVertical: 7,
-  },
-  SPLbtn: {
-    alignItems: 'center',
-    alignSelf: 'flex-end',
-    backgroundColor: 'blue',
-    borderRadius: 10,
-    //  cursor: 'pointer', for webapp if implemented
-    height: 60,
-    paddingHorizontal: 10,
-    paddingVertical: 15,
-    width: 120,
-  },
-  SPLButtonText: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  SPLerrText: {
-
-  },
-
-})

@@ -51,7 +51,53 @@ const styles = StyleSheet.create({
   },
   P: {
     fontSize: 16,  // S
-  }
+  },
+
+  //  SPL styles
+  SPLheader: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignContent: 'center',
+    marginBottom: 20,
+    marginTop: 20,
+  },
+  formControl: {
+    marginBottom: 2,
+    marginTop: 2,
+  },
+  SPLInputLabel: {
+    fontSize: 18,
+    marginBottom: 5,
+  },
+  SPLTextInput: {
+    borderColor: 'black',
+    borderWidth: 1,
+    color: 'grey',
+    fontSize: 22,
+    height: 50,
+    paddingHorizontal: 10,
+    paddingVertical: 7,
+  },
+  SPLbtn: {
+    alignItems: 'center',
+    alignSelf: 'flex-end',
+    backgroundColor: 'blue',
+    borderRadius: 10,
+    //  cursor: 'pointer', for webapp if implemented
+    height: 60,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    width: 120,
+  },
+  SPLButtonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  SPLerrText: {
+    fontSize: 18,
+  },
 })
 
 export default styles

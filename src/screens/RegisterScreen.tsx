@@ -15,15 +15,10 @@ const RegisterScreen:React.FC = () => {
     <View>
       <PageTitleComponent
         title='Register Screen'
-        slug='Duplicate for Benefactor and Cause' 
+        slug='Template for Benefactor and Cause' 
         theme={theme}   
       />
       <AddressUIComponent />
-      <Text>
-        This example shows how to implements a Postcode address Finder
-        using React Native.  It returns example addresses no matter what
-        is entered as  search Postcode.  The UI is customizable for the developer.
-      </Text>
     </View>
   )
 }

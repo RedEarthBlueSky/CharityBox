@@ -10,8 +10,7 @@ import {
  import { AddressRecProvider } from './components/AddressRec'
 
 const AddressUIComponent: React.FC = () => {
-  //  My account
-  //  https://www.simplylookupconsole.co.uk/A2CustomerAccount/main.aspx?coid=3333347653_30_30_______
+  //  My account https://www.simplylookupconsole.co.uk/A2CustomerAccount/main.aspx?coid=3333347653_30_30_______
   
   // Datakey simplypostcode external public facing app
   const datakey = 'W_5ADFE8B4C9B549918715857FEE048E'
@@ -24,6 +23,7 @@ const AddressUIComponent: React.FC = () => {
   const [selectionLines, setSelectionLines] = useState<selectedLinesArray>([])
 
   //  ============ Simply Postcode SEARCH EVENTS ============  //
+  
   // Search button pressed, get address list from Simply Postcode HTTP
   const SPLSearchButton = (searchBy: string) => {
     //  searchBy= 'zz99' ...  Shows demo data
@@ -44,8 +44,13 @@ const AddressUIComponent: React.FC = () => {
             .then((data) => {
               if (data.found==0){
                 console.log('0 ' ,data.credits_display_text)
-                console.log('errormessage ' ,data.errormessage)
+                console.log('Error Message ' ,data.errormessage)
+                //  Add extra layer of error checking
+                if (data.errormessage == 'No postcode to search for') {
+                  return setErrorTxt('Please provide a postcode to search for.')
+                }
                 setErrorTxt(data.credits_display_text)
+                setShowSearchList(false)
               } else {
                 if (data.recordcount==0){
                   setErrorTxt('Postcode not found')
@@ -58,6 +63,7 @@ const AddressUIComponent: React.FC = () => {
                   setSelectionLines(data.records)
                   console.log('Data records in state: ', selectionLines)
                   setShowSearchList(true)
+                  console.log('showSearchList is: ', showSearchList)
                 }
               }              
             });}

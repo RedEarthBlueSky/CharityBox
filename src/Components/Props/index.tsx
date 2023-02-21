@@ -7,3 +7,11 @@ export interface PageTitleProps {
     theme: string
   }
 }
+
+type selectedLinesArrayProps = Array<object>
+export interface SPLSelectListProps {
+  datakey: string
+  selectionLines: selectedLinesArrayProps
+  showSearchList: boolean
+  setShowSearchList: selectedLinesArrayProps
+}
