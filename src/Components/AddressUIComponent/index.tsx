@@ -36,19 +36,22 @@ const AddressUIComponent: React.FC = () => {
     getSelectionLinesFromSPLServer()
   }
 
+  const SPLNoPostcodeProvided = () => {
+    setErrorTxt('Please provide a postcode to search for.')  
+    setShowSearchList(false)
+  }
+
   //  Fetch list from server for display
   const SPLFetchList = async (postcode: string) => {
-    const fetchData = (url: string) => {
+    const fetchData = (url: string):Promise<any> => {
       return fetch(url)
             .then((response) => response.json())
             .then((data) => {
-              if (data.found==0){
+              if (data.found===0){
                 console.log('0 ' ,data.credits_display_text)
-                console.log('Error Message ' ,data.errormessage)
+                console.log('Error Message: ' ,data.errormessage)
                 //  Add extra layer of error checking
-                if (data.errormessage == 'No postcode to search for') {
-                  return setErrorTxt('Please provide a postcode to search for.')
-                }
+                if (data.errormessage==='No postcode to search for') return SPLNoPostcodeProvided()
                 setErrorTxt(data.credits_display_text)
                 setShowSearchList(false)
               } else {
@@ -63,7 +66,6 @@ const AddressUIComponent: React.FC = () => {
                   setSelectionLines(data.records)
                   console.log('Data records in state: ', selectionLines)
                   setShowSearchList(true)
-                  console.log('showSearchList is: ', showSearchList)
                 }
               }              
             });}
