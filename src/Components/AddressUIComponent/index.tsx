@@ -1,5 +1,5 @@
 // UK Address Finder Component
-import { View, Text, DatePickerAndroid } from 'react-native'
+import { View, ScrollView, Text, DatePickerAndroid } from 'react-native'
 import React, { useState } from 'react'
 import styles from '../../Screens/styles/globalstyles'
 import { 
@@ -26,13 +26,13 @@ const AddressUIComponent: React.FC = () => {
   
   // Search button pressed, get address list from Simply Postcode HTTP
   const SPLSearchButton = (searchBy: string) => {
-    //  searchBy= 'zz99' ...  Shows demo data
     console.log('Search Button for:  ', searchBy)
     setErrorTxt('')
     
     const getSelectionLinesFromSPLServer = async () => {
       await SPLFetchList(searchBy)
     }
+
     getSelectionLinesFromSPLServer()
   }
 
@@ -43,19 +43,20 @@ const AddressUIComponent: React.FC = () => {
 
   //  Fetch list from server for display
   const SPLFetchList = async (postcode: string) => {
+    setErrorTxt('')
     const fetchData = (url: string):Promise<any> => {
       return fetch(url)
             .then((response) => response.json())
             .then((data) => {
-              if (data.found===0){
+              console.log(data.found, data.recordcount)
+              //  had to add data.errormessage qualifier to make it work
+              if (data.found==0 && data.errormessage=='No postcode to search for'){
                 console.log('0 ' ,data.credits_display_text)
                 console.log('Error Message: ' ,data.errormessage)
-                //  Add extra layer of error checking
-                if (data.errormessage==='No postcode to search for') return SPLNoPostcodeProvided()
-                setErrorTxt(data.credits_display_text)
-                setShowSearchList(false)
+                setErrorTxt(data.errormessage)
               } else {
                 if (data.recordcount==0){
+                  console.log('Postcode not found')
                   setErrorTxt('Postcode not found')
                   setShowSearchList(false)
                 }
@@ -64,11 +65,12 @@ const AddressUIComponent: React.FC = () => {
                   console.log('Found record: ',data.found)
                   console.log('Status: ',data.credits_display_text)
                   setSelectionLines(data.records)
-                  console.log('Data records in state: ', selectionLines)
                   setShowSearchList(true)
                 }
               }              
             });}
+
+
     const SPLurl = `https://www.simplylookupadmin.co.uk/JSONservice/JSONSearchForAddress.aspx?cross=true&appID=122&datakey=${datakey}&postcode=${postcode}`
     console.log(SPLurl)
     fetchData(SPLurl)
@@ -76,13 +78,22 @@ const AddressUIComponent: React.FC = () => {
 
 
   return (
-    <View>
+    // View styles to solve ScrollList height problem
+    // Added flex: 1 to Register Screen parent to sort this
+    <View style={{
+      flex: 1,
+      }}>
       <Text style={styles.H2Bold}>Address UI Component</Text>
       <AddressRecProvider>
         <SPLSearch 
           SPLSearchButton={SPLSearchButton} 
           errorText={errorTxt} 
         />
+        {/* <ScrollView>
+          <Text>
+            {JSON.stringify(selectionLines, null, 2)}
+          </Text>
+        </ScrollView> */}
         {showSearchList &&
           <SPLSelectList 
             datakey={datakey}

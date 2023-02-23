@@ -21,7 +21,10 @@ const SPLSearch = ({SPLSearchButton, errorText}) => {
             <TextInput 
               placeholder='Postcode'
               style={styles.SPLTextInput}
-              onChangeText={newText => setSearchBy(newText)}
+              onChangeText={newText => {
+                setSearchBy(newText)
+                // console.log(newText)
+              }}
               defaultValue={searchBy}
             />
         </View>
