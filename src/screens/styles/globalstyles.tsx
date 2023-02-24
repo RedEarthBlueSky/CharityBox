@@ -57,10 +57,11 @@ const styles = StyleSheet.create({
   SPLheader: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignContent: 'center',
-    marginBottom: 20,
-    marginTop: 20,
+    marginTop: 10,
+    paddingLeft: 10,
+    paddingRight: 30,
   },
   formControl: {
     marginBottom: 2,
@@ -73,9 +74,10 @@ const styles = StyleSheet.create({
   SPLTextInput: {
     borderColor: 'black',
     borderWidth: 1,
+    borderRadius: 5,
     color: 'grey',
-    fontSize: 22,
-    height: 50,
+    fontSize: 18,
+    height: 45,
     paddingHorizontal: 10,
     paddingVertical: 7,
   },
@@ -85,9 +87,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     borderRadius: 10,
     //  cursor: 'pointer', for webapp if implemented
-    height: 60,
+    height: 45,
     paddingHorizontal: 10,
-    paddingVertical: 15,
+    paddingVertical: 7,
     width: 120,
   },
   SPLButtonText: {

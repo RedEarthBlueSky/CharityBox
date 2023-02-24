@@ -32,11 +32,10 @@ const SPLSearch = ({SPLSearchButton, errorText}) => {
           onPress={() => SPLSearchButton(searchBy)}
           style={styles.SPLbtn}
         >
-          <Text style={styles.SPLButtonText}>Submit</Text>
+          <Text style={styles.SPLButtonText}>Search</Text>
         </Pressable>
       </View>
       <Text style={styles.SPLerrText}>{errorText}</Text>
-      <LineBreakComponent />
     </View>
   )
 }

@@ -1,12 +1,10 @@
-//  SPLSelectList
-//  Used to display the search results 
+//  SPLSelectList display the search results 
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, ScrollView } from 'react-native'
 import React, {useState, useContext, useEffect} from 'react'
 
 import styles from '../../../Screens/styles/globalstyles'
 import { SPLSelectListProps } from '../../Props'
-//  Store for address information
-import { AddressRecContext } from './AddressRec'
+import { AddressRecContext } from './AddressRec' //  Store for address information
 
 const SPLSelectList: React.FC<SPLSelectListProps> = ({datakey, selectionLines, showSearchList, setShowSearchList,}: SPLSelectListProps) => {
   //  Shared Address record store
@@ -25,7 +23,6 @@ const SPLSelectList: React.FC<SPLSelectListProps> = ({datakey, selectionLines, s
     //  this works returns the record but also feels very hacky hmmmm must be a better way
     if (selectedSomething==true && selectedID!='') return SPLselected()
     //  remove for production
-    console.log('Error Message: selectedID and selectedSomething have not updated')
   }, [selectedID, selectedSomething])
 
   //  Get the ID of the line and save it in state use value instead of e.target.value
@@ -81,8 +78,10 @@ const SPLSelectList: React.FC<SPLSelectListProps> = ({datakey, selectionLines, s
 
   return (
     <>
-      <Text style={styles.H3Bold}>Tap to Select Address</Text>
-      <ScrollView style={formStyles.SPLScrollView}>
+      <Text style={styles.H3Bold}>Select Address</Text>
+      <ScrollView 
+        style={formStyles.SPLScrollView}
+      >
         {
           selectionLines.map((line, index) => (
               <TouchableOpacity 
@@ -98,7 +97,9 @@ const SPLSelectList: React.FC<SPLSelectListProps> = ({datakey, selectionLines, s
           ))
         }
       </ScrollView>
-      <Text style={styles.H3Bold}>End of List</Text>
+      <View style={formStyles.SPLSelectListContainer}>
+        <Text style={styles.H4Bold}>Select address from above</Text>
+      </View>
     </>
   )
 }

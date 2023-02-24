@@ -1,5 +1,5 @@
 // UK Address Finder Component
-import { View, ScrollView, Text, DatePickerAndroid } from 'react-native'
+import { View, ScrollView, Text, Keyboard } from 'react-native'
 import React, { useState } from 'react'
 import styles from '../../Screens/styles/globalstyles'
 import { 
@@ -66,6 +66,7 @@ const AddressUIComponent: React.FC = () => {
                   console.log('Status: ',data.credits_display_text)
                   setSelectionLines(data.records)
                   setShowSearchList(true)
+                  Keyboard.dismiss()
                 }
               }              
             });}
@@ -83,17 +84,11 @@ const AddressUIComponent: React.FC = () => {
     <View style={{
       flex: 1,
       }}>
-      <Text style={styles.H2Bold}>Address UI Component</Text>
       <AddressRecProvider>
         <SPLSearch 
           SPLSearchButton={SPLSearchButton} 
           errorText={errorTxt} 
         />
-        {/* <ScrollView>
-          <Text>
-            {JSON.stringify(selectionLines, null, 2)}
-          </Text>
-        </ScrollView> */}
         {showSearchList &&
           <SPLSelectList 
             datakey={datakey}
