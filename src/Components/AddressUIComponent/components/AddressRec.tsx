@@ -9,6 +9,7 @@ export const AddressRecContext = createContext()
 interface AddressRecordProps {
   title: string
   firstname: string
+  middlenames: string
   lastname: string
   email: string,
   telephone: string,
@@ -20,6 +21,7 @@ interface AddressRecordProps {
   county: string
   postcode: string
   country: string
+  status: string
 }
 
 interface AddressArgumentProps {
@@ -33,6 +35,7 @@ const AddressRecProvider = (props: AddressArgumentProps) => {
   const [addressRec, setAddressRec] = useState<AddressRecordProps>({
     "title":"",
     "firstname": "",
+    "middlenames": "",
     "lastname":"",
     "email": "",
     "telephone": "",
@@ -44,6 +47,7 @@ const AddressRecProvider = (props: AddressArgumentProps) => {
     "county": "",
     "postcode": "",
     "country": "",
+    "status": "", // Charity, Company or Individual
   })
 
   return (

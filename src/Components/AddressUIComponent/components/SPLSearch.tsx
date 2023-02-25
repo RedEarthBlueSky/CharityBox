@@ -11,9 +11,9 @@ import { LineBreakComponent } from '../../LineBreakComponent'
 const SPLSearch = ({
   SPLSearchButton, 
   errorText,
-  showAddressUI,
   setShowAddressUI,
   setErrorTxt,
+  setShowSearchList,
 }) => {
   const [searchBy, setSearchBy] = useState<string>('')
 
@@ -21,7 +21,7 @@ const SPLSearch = ({
     <View>
       <View style={styles.SPLheader}>
       <Text style={styles.SPLInputLabel}>
-              Search by Postcode:
+              Find Address or Enter Manually:
       </Text>
         <View style={styles.formControl}>
             <TextInput 
@@ -42,7 +42,9 @@ const SPLSearch = ({
           <Pressable
             onPress={() => {
               setShowAddressUI(true)
+              setShowSearchList(false)
               setErrorTxt('')
+              
             }}
             style={styles.SPLbtn}
           >

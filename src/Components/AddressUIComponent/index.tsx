@@ -7,7 +7,7 @@ import {
   SPLSearch,
   SPLSelectList,
  } from './components'
- import { AddressRecProvider } from './components/AddressRec'
+//  import { AddressRecProvider } from './components/AddressRec'
 
 const AddressUIComponent: React.FC = () => {
   //  My account https://www.simplylookupconsole.co.uk/A2CustomerAccount/main.aspx?coid=3333347653_30_30_______
@@ -79,20 +79,17 @@ const AddressUIComponent: React.FC = () => {
     <View style={{
       flex: 1,
       }}>
-      <AddressRecProvider>
         <SPLSearch 
           SPLSearchButton={SPLSearchButton} 
           errorText={errorTxt} 
           setErrorTxt={setErrorTxt}
-          showAddressUI={showAddressUI}
           setShowAddressUI={setShowAddressUI}
+          setShowSearchList={setShowSearchList}
         />
         {showSearchList &&
           <SPLSelectList 
             datakey={datakey}
             selectionLines={selectionLines}
-            showSearchList={showSearchList}
-            showAddressUI={showAddressUI}
             setShowSearchList={setShowSearchList}
             setShowAddressUI={setShowAddressUI}
           />
@@ -100,7 +97,6 @@ const AddressUIComponent: React.FC = () => {
         {showAddressUI &&
           <AddressUI />
         }
-      </AddressRecProvider>
     </View>
   )
 }
