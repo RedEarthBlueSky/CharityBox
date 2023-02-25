@@ -8,16 +8,22 @@ import { LineBreakComponent } from '../../LineBreakComponent'
 //    Search box and button + Get list from server
 // =================================================
 
-const SPLSearch = ({SPLSearchButton, errorText}) => {
+const SPLSearch = ({
+  SPLSearchButton, 
+  errorText,
+  showAddressUI,
+  setShowAddressUI,
+  setErrorTxt,
+}) => {
   const [searchBy, setSearchBy] = useState<string>('')
 
   return (
     <View>
       <View style={styles.SPLheader}>
-        <View style={styles.formControl}>
-            <Text style={styles.SPLInputLabel}>
+      <Text style={styles.SPLInputLabel}>
               Search by Postcode:
-            </Text>
+      </Text>
+        <View style={styles.formControl}>
             <TextInput 
               placeholder='Postcode'
               style={styles.SPLTextInput}
@@ -27,15 +33,24 @@ const SPLSearch = ({SPLSearchButton, errorText}) => {
               }}
               defaultValue={searchBy}
             />
+          <Pressable
+            onPress={() => SPLSearchButton(searchBy)}
+            style={styles.SPLbtn}
+          >
+            <Text style={styles.SPLButtonText}>Find</Text>
+          </Pressable>
+          <Pressable
+            onPress={() => {
+              setShowAddressUI(true)
+              setErrorTxt('')
+            }}
+            style={styles.SPLbtn}
+          >
+            <Text style={styles.SPLButtonText}>Enter</Text>
+          </Pressable>
         </View>
-        <Pressable
-          onPress={() => SPLSearchButton(searchBy)}
-          style={styles.SPLbtn}
-        >
-          <Text style={styles.SPLButtonText}>Search</Text>
-        </Pressable>
       </View>
-      <Text style={styles.SPLerrText}>{errorText}</Text>
+      <Text style={(errorText=='')? {height:0} :styles.SPLerrText}>{errorText}</Text>
     </View>
   )
 }

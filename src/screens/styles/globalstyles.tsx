@@ -2,20 +2,17 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   MainWrapper: {
-    alignContent: 'flex-start',
-    display: 'flex',
-    flex: 1,
     width: '100%', //  set this in em?
     height: '100%',
-    justifyContent: 'space-evenly',
     padding: 0,
     margin: 0,
   },
   container: {
+    display: 'flex',
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     paddingHorizontal: 10,
+    paddingTop: 10,
+    width: '100%',
   },
   componentContainer: {
     width: '100%',
@@ -56,16 +53,19 @@ const styles = StyleSheet.create({
   //  SPL styles
   SPLheader: {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignContent: 'center',
+    flexDirection: 'column',
     marginTop: 10,
     paddingLeft: 10,
     paddingRight: 30,
+    width: '100%'
   },
   formControl: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginBottom: 2,
     marginTop: 2,
+    width: '100%'
   },
   SPLInputLabel: {
     fontSize: 18,
@@ -77,27 +77,28 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     color: 'grey',
     fontSize: 18,
-    height: 45,
+    height: 40,
     paddingHorizontal: 10,
     paddingVertical: 7,
   },
   SPLbtn: {
     alignItems: 'center',
     alignSelf: 'flex-end',
-    backgroundColor: 'blue',
+    backgroundColor: '#34a4eb',
+    borderColor: '#34a4eb',
+    borderWidth: 1,
     borderRadius: 10,
     //  cursor: 'pointer', for webapp if implemented
-    height: 45,
-    paddingHorizontal: 10,
-    paddingVertical: 7,
-    width: 120,
+    height: 42,
+    paddingHorizontal: 20,
+    paddingVertical: 5,
   },
   SPLButtonText: {
     color: 'white',
     fontSize: 18,
-    fontWeight: 'bold',
   },
   SPLerrText: {
+    color: 'red',
     fontSize: 18,
   },
 })

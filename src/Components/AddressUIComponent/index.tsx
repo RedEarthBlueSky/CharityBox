@@ -11,19 +11,13 @@ import {
 
 const AddressUIComponent: React.FC = () => {
   //  My account https://www.simplylookupconsole.co.uk/A2CustomerAccount/main.aspx?coid=3333347653_30_30_______
-  
-  // Datakey simplypostcode external public facing app
   const datakey = 'W_5ADFE8B4C9B549918715857FEE048E'
-  //  State of Address Selection List normally hidden
   const [showSearchList, setShowSearchList] = useState<boolean>(false)
-  //  Display UI errors - remove in live app (?)
+  const [showAddressUI, setShowAddressUI] = useState<boolean>(false)
   const [errorTxt, setErrorTxt] = useState<string>('')
-  //  store for lines to display in List 
   type selectedLinesArray = Array<object>
   const [selectionLines, setSelectionLines] = useState<selectedLinesArray>([])
-
-  //  ============ Simply Postcode SEARCH EVENTS ============  //
-  
+ 
   // Search button pressed, get address list from Simply Postcode HTTP
   const SPLSearchButton = (searchBy: string) => {
     console.log('Search Button for:  ', searchBy)
@@ -32,12 +26,13 @@ const AddressUIComponent: React.FC = () => {
     const getSelectionLinesFromSPLServer = async () => {
       await SPLFetchList(searchBy)
     }
-
+    //  Hide the address details if a new search is made
+    setShowAddressUI(false)
     getSelectionLinesFromSPLServer()
   }
 
   const SPLNoPostcodeProvided = () => {
-    setErrorTxt('Please provide a postcode to search for.')  
+    setErrorTxt('Please provide a postcode')  
     setShowSearchList(false)
   }
 
@@ -53,7 +48,7 @@ const AddressUIComponent: React.FC = () => {
               if (data.found==0 && data.errormessage=='No postcode to search for'){
                 console.log('0 ' ,data.credits_display_text)
                 console.log('Error Message: ' ,data.errormessage)
-                setErrorTxt(data.errormessage)
+                setErrorTxt('Please enter a postcode')
               } else {
                 if (data.recordcount==0){
                   console.log('Postcode not found')
@@ -88,17 +83,22 @@ const AddressUIComponent: React.FC = () => {
         <SPLSearch 
           SPLSearchButton={SPLSearchButton} 
           errorText={errorTxt} 
+          setErrorTxt={setErrorTxt}
+          showAddressUI={showAddressUI}
+          setShowAddressUI={setShowAddressUI}
         />
         {showSearchList &&
           <SPLSelectList 
             datakey={datakey}
             selectionLines={selectionLines}
             showSearchList={showSearchList}
+            showAddressUI={showAddressUI}
             setShowSearchList={setShowSearchList}
+            setShowAddressUI={setShowAddressUI}
           />
         }
-        {!showSearchList &&
-          <AddressUI />  //  there is a 1 added in the code what's this?
+        {showAddressUI &&
+          <AddressUI />
         }
       </AddressRecProvider>
     </View>

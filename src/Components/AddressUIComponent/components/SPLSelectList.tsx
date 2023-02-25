@@ -4,16 +4,18 @@ import React, {useState, useContext, useEffect} from 'react'
 
 import styles from '../../../Screens/styles/globalstyles'
 import { SPLSelectListProps } from '../../Props'
-import { AddressRecContext } from './AddressRec' //  Store for address information
+import { AddressRecContext } from './AddressRec'
 
-const SPLSelectList: React.FC<SPLSelectListProps> = ({datakey, selectionLines, showSearchList, setShowSearchList,}: SPLSelectListProps) => {
-  //  Shared Address record store
+const SPLSelectList: React.FC<SPLSelectListProps> = ({
+  datakey, 
+  selectionLines, 
+  showSearchList, 
+  setShowSearchList,
+  showAddressUI,
+  setShowAddressUI
+}: SPLSelectListProps) => {
   const [addressRec, setAddressRec] = useContext(AddressRecContext)
-
-  //  The ID of the currently selected Address
   const [selectedID, setSelectedID] = useState<string>('')
-
-  //  State of the selections box
   const [selectedSomething, setSelectedSomething] = useState<boolean>(false)
 
   //  Check for updates to state - remove for production dev only checkinfg
@@ -22,10 +24,9 @@ const SPLSelectList: React.FC<SPLSelectListProps> = ({datakey, selectionLines, s
     console.log('useEffect state update selectedSomething is: ', selectedSomething)
     //  this works returns the record but also feels very hacky hmmmm must be a better way
     if (selectedSomething==true && selectedID!='') return SPLselected()
-    //  remove for production
   }, [selectedID, selectedSomething])
 
-  //  Get the ID of the line and save it in state use value instead of e.target.value
+  //  Set ID of line in state
   const handleChange = (value: string) => {
     console.log('Selected from handleChange is: ', value)
     setSelectedID(value)
@@ -45,7 +46,7 @@ const SPLSelectList: React.FC<SPLSelectListProps> = ({datakey, selectionLines, s
       return fetch(url)
           .then((response) => response.json())
           .then((data) => {
-            console.log(data)
+            console.log('Data from SPLSelectList: ', data)
 
             if (data.found==0){
               console.log('0 ' ,data.credits_display_text)
@@ -66,6 +67,7 @@ const SPLSelectList: React.FC<SPLSelectListProps> = ({datakey, selectionLines, s
                         postcode: data.postcode,
                         country: data.country
                     })) 
+              setShowAddressUI(true)
             }
             
           });}

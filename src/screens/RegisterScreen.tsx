@@ -12,10 +12,9 @@ import themeContext from './styles/themeContext'
 const RegisterScreen:React.FC = () => {
   const theme = useContext(themeContext)
   return (
-    <View style={{flex: 1,}}>
+    <View style={styles.container}>
       <PageTitleComponent
-        title='Register Screen'
-        slug='Template for Benefactor and Cause' 
+        slug='Register Screen: template Benefactor & Cause' 
         theme={theme}   
       />
       <AddressUIComponent />

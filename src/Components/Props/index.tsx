@@ -14,4 +14,6 @@ export interface SPLSelectListProps {
   selectionLines: selectedLinesArrayProps
   showSearchList: boolean
   setShowSearchList: selectedLinesArrayProps
+  showAddressUI: boolean
+  setShowAddressUI: selectedLinesArrayProps
 }

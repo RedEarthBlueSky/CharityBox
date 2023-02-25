@@ -148,6 +148,7 @@ const formStyles = StyleSheet.create({
   },
   AUITextInput: {
     borderColor: '#000',
+    borderRadius: 5,
     borderWidth: 1,
     fontSize: 16,
     color: 'grey',

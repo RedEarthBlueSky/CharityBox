@@ -36,7 +36,7 @@ const AppNavigator = () => {
       value={darkMode === true ? theme.dark : theme.light}
     >
       <Stack.Navigator 
-        initialRouteName='Register'
+        initialRouteName='Apply Now'
         // theme={darkMode === true ? DarkTheme : DefaultTheme}
       >
         <Stack.Screen 
@@ -44,7 +44,7 @@ const AppNavigator = () => {
           component={HomeScreen} 
         />
         <Stack.Screen 
-          name="Register"
+          name="Apply Now"
           component={RegisterScreen}
         />
         <Stack.Screen 

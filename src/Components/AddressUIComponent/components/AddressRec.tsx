@@ -1,14 +1,17 @@
 //  AddressUIRecProvider
 import React, {useState, createContext} from 'react'
-
 export const AddressRecContext = createContext()
 
 //  ============
-//  AdressProvider is used to store the address info RECORDS to displa on the page so the user
-//  can edit the values found by Simply Postcode
+//  Store records so the user can edit the values found by Simply Postcode
 //  ============
 
 interface AddressRecordProps {
+  title: string
+  firstname: string
+  lastname: string
+  email: string,
+  telephone: string,
   company: string
   line1: string
   line2: string
@@ -28,6 +31,11 @@ const AddressRecProvider = (props: AddressArgumentProps) => {
 
   //  create state to store Address Records
   const [addressRec, setAddressRec] = useState<AddressRecordProps>({
+    "title":"",
+    "firstname": "",
+    "lastname":"",
+    "email": "",
+    "telephone": "",
     "company": "",
     "line1": "",
     "line2": "",
