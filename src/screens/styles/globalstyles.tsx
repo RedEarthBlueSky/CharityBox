@@ -17,6 +17,49 @@ const styles = StyleSheet.create({
   componentContainer: {
     width: '100%',
   },
+
+  SPLForm: {
+    marginBottom: 10,
+  },
+  FormControl: {
+    marginHorizontal: 2,
+    marginVertical: 2,
+  },
+
+  AUITextInput: {
+    borderColor: '#000',
+    borderRadius: 5,
+    borderWidth: 1,
+    fontSize: 16,
+    color: 'grey',
+    width: '90%',
+    height: 40,
+    marginLeft: 10,
+    paddingLeft: 10,
+  },
+  TextInputWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderColor: '#000',
+    borderRadius: 5,
+    borderWidth: 1,
+    color: 'grey',
+    width: '90%',
+    height: 40,
+    marginLeft: 10,
+    paddingLeft: 10,
+  },
+  TextInputWrapperText: {
+    fontSize: 18,
+  },
+  AUILabel: {
+    fontSize: 16,
+    marginLeft: 10,
+  },
+
+
   //  At some point need to extract the values from a global styleguide
   H1: {
     fontSize: 38, // XXL

@@ -6,5 +6,8 @@ export * from './PageTitleComponent'
 export * from './ScreenWrapperComponent'
 export * from './ClientUIComponent'
 
+//  Text Input
+export * from './TextInputClearable'
+
 //  Buttons
 export * from './ButtonComponents/BasicButtonComponent'
