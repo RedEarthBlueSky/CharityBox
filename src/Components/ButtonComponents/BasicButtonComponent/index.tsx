@@ -10,7 +10,6 @@ interface BasicButtonProps {
 const BasicButtonComponent:React.FC<BasicButtonProps> = (props: BasicButtonProps) => {
   return (
     <View>
-      <Text>Basic Button Component</Text>
       <Button 
         title={props.title}
         onPress={props.action}

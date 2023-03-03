@@ -18,11 +18,7 @@ const TextInputClearable: React.FC<TextInputClearableProps> = ({
   const [useLabel, setUseLabel] = useState<boolean>(true)
   const closeIcon = <Icon name="close-o" size={35} color={'#C7C7CD'} />
   useEffect(() => {
-    if (isUsername == 'firstname' || 
-        isUsername == 'lastname' || 
-        isUsername == 'title') {
-      setUseLabel(false)
-    }
+    if (isUsername=='lastname') {setUseLabel(false)}
   },[isUsername])
   
   return (
@@ -38,7 +34,6 @@ const TextInputClearable: React.FC<TextInputClearableProps> = ({
           numberOfLines={1}
           placeholder={placeholder}
           onChangeText={onChangeText}
-          style={styles.H5}
         />
         <TouchableOpacity
           onPress={onPressClose}
@@ -46,8 +41,11 @@ const TextInputClearable: React.FC<TextInputClearableProps> = ({
           {closeIcon}
         </TouchableOpacity>
       </View>
+      <View>
+        <Text>Some error text here</Text>
+      </View>
     </View>
   )
 }
 
-export { TextInputClearable }
+export {TextInputClearable}

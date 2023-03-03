@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 2,
     marginVertical: 2,
   },
-
   AUITextInput: {
     borderColor: '#000',
     borderRadius: 5,
@@ -148,6 +147,22 @@ const styles = StyleSheet.create({
   SPLerrText: {
     color: 'red',
     fontSize: 18,
+  },
+  SubmitTO: {
+    backgroundColor: '#3495eb',
+    borderRadius: 3,
+    borderColor: '#3495eb',
+    borderWidth: 2,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    maxWidth: '90%',
+    marginLeft: 10,
+  },
+  TOText: {
+    fontSize: 16,
+    color: 'white',
   },
 })
 

@@ -1,8 +1,8 @@
 const clientDetailsData = [
   {
     label: 'EMAIL or MOBILE ID',
-    key: 'email',
-    placeholder: 'Enter your Email or Mobile Number'
+    key: 'username',
+    placeholder: 'Email or Mobile Number'
   },
   {
     label: 'CREATE PASSWORD',
@@ -10,7 +10,7 @@ const clientDetailsData = [
     placeholder: 'Enter your password'
   },
   {
-    label: '',
+    label: 'FULL NAME',
     key: 'firstname',
     placeholder: 'First Name'
   },
@@ -21,20 +21,4 @@ const clientDetailsData = [
   },
 ]
 
-const Titles =[
-  { label: 'Mr', value: 'Mr' },
-  { label: 'Mrs', value: 'Mrs' },
-
-  'Mrs',
-  'Miss',
-  'Ms',
-  'Dr',
-  'Sir',
-  'Reverand',
-  'Professor',
-  'Specify Other',
-  'Lady',
-  'None'
-]
-
-export { clientDetailsData, Titles }
+export { clientDetailsData }

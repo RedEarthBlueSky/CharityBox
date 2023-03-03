@@ -8,12 +8,9 @@ export const ClientDataContext = createContext()
 //  ============
 
 interface ClientDataProps {
-  title: string
   firstname: string
-  middlenames: string
   lastname: string
-  email: string,
-  telephone: string,
+  username: string | number
   company: string
   line1: string
   line2: string
