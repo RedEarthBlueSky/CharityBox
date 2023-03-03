@@ -1,8 +1,8 @@
 import { View, Text, ScrollView } from 'react-native'
 import React, { useContext } from 'react'
-import styles from "../styles/globalstyles"
+import styles from "../../Styles/globalstyles"
 import { BenefactorInformationMenu } from '../data/helperdata'
-import themeContext from '../styles/themeContext'
+import themeContext from '../../Styles/themeContext'
 
 const BenefactorMenu = BenefactorInformationMenu.map((MenuItem, index) => {
   const { name, component, additional } = MenuItem

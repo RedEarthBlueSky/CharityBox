@@ -5,24 +5,24 @@ import {
   AddressUIComponent,
   ScreenWrapperComponent,
   PageTitleComponent,
-  ClientUIComponent,
+  CreateALoginComponent,
 } from '../Components'
-import styles from './styles/globalstyles'
-import themeContext from './styles/themeContext'
-import { AddressRecProvider } from '../Components/AddressUIComponent/components'
+import styles from '../Styles/globalstyles'
+import themeContext from '../Styles/themeContext'
+import { ClientDataProvider } from '../Context/ClientData'
 
 const RegisterScreen:React.FC = () => {
   const theme = useContext(themeContext)
   return (
     <View style={styles.container}>
-      <AddressRecProvider>
+      <ClientDataProvider>
         <PageTitleComponent
-          slug='Register Screen: template Benefactor & Cause' 
+          slug='Create Login Screen: template Benefactor & Cause' 
           theme={theme}   
         />
-        <ClientUIComponent />
+        <CreateALoginComponent />
         <AddressUIComponent />
-      </AddressRecProvider>
+      </ClientDataProvider>
     </View>
   )
 }

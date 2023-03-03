@@ -19,9 +19,10 @@ export interface SPLSelectListProps {
 }
 
 export interface TextInputClearableProps {
-  label: string
+  fieldName: string
   placeholder: string
   defaultValue: string
+  isUsername: string
   onChangeText: () => void
   onPressClose: () => any
 }

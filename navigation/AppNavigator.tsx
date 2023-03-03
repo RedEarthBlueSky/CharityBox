@@ -13,8 +13,8 @@ import {
   RegisterScreen,
 } from '../src/Screens'
 
-import theme from '../src/Screens/styles/theme'
-import themeContext from '../src/Screens/styles/themeContext'
+import theme from '../src/Styles/theme'
+import themeContext from '../src/Styles/themeContext'
 import { DarkTheme, DefaultTheme } from '@react-navigation/native'
 
 const AppNavigator = () => {

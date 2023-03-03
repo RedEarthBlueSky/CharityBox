@@ -1,39 +1,30 @@
 const clientDetailsData = [
-  // key is used for 3 places defaultValue, onChangeText, onPressClose
   {
-    label: 'First Name',
-    key: 'firstname',
-  },
-  {
-    label: 'Last Name',
-    key: 'lastname',
-  },
-  {
-    label: 'Email Address',
+    label: 'EMAIL or MOBILE ID',
     key: 'email',
+    placeholder: 'Enter your Email or Mobile Number'
   },
   {
-    //  set to email if required
-    //  tickbox
-    label: 'Username',
-    key: 'username',
-  },
-  {
-    //  set to email if required
-    //  tickbox
-    label: 'Password',
+    label: 'CREATE PASSWORD',
     key: 'password',
+    placeholder: 'Enter your password'
   },
   {
-    //  set to email if required
-    //  tickbox
-    label: 'Confirm Password',
-    key: 'confirmpassword',
+    label: '',
+    key: 'firstname',
+    placeholder: 'First Name'
+  },
+  {
+    label: '',
+    key: 'lastname',
+    placeholder: 'Last Name'
   },
 ]
 
 const Titles =[
-  'Mr',
+  { label: 'Mr', value: 'Mr' },
+  { label: 'Mrs', value: 'Mrs' },
+
   'Mrs',
   'Miss',
   'Ms',

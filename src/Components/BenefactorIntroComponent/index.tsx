@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Button } from 'react-native'
 import * as React from 'react'
 import { LineBreakComponent } from '../LineBreakComponent'
-import styles from '../../Screens/styles/globalstyles'
+import styles from '../../Styles/globalstyles'
 
 const BenefactorIntroComponent: React.FC = ({navigation, theme}) => {
   return (

@@ -2,22 +2,22 @@
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import React, { useContext, useEffect } from 'react'
 
-import { AddressRecContext } from '../AddressRec'
-import styles from '../../../../Screens/styles/globalstyles'
+import { ClientDataContext } from '../../../../Context/ClientData'
+import styles from '../../../../Styles/globalstyles'
 
 const AddressUI: React.FC = () => {
   //  Shared Address record store
-  const [addressRec, setAddressRec] = useContext(AddressRecContext)
+  const [clientData, setClientData] = useContext(ClientDataContext)
   useEffect(() => {
-    console.log(addressRec)
-  },[addressRec])
+    console.log(clientData)
+  },[clientData])
   return (
     <View>
       <View style={{display:'flex',flexDirection:'row',marginLeft: 10,alignItems:'baseline'}}>
         <Text style={styles.H3Bold}>Address: </Text>
         <Text style={[styles.P]}>Tap to update if required:</Text>
       </View>
-      {/* Address for mapped to AddressRecContext so if user edites 
+      {/* Address for mapped to ClientDataContext so if user edites 
       or we search for Address it updates to a from the UI */}
       <View style={formStyles.SPLForm}>
 
@@ -28,11 +28,11 @@ const AddressUI: React.FC = () => {
             placeholder='Company or Charity Name:'
             style={formStyles.AUITextInput}
             onChangeText={(newText) => {
-              setAddressRec((prevState: any) => ({
+              setClientData((prevState: any) => ({
                 ...prevState, company: newText
               }))
             }}
-            defaultValue={addressRec.company}
+            defaultValue={clientData.company}
           />
         </View>
 
@@ -43,11 +43,11 @@ const AddressUI: React.FC = () => {
             placeholder='Property Name/Number'
             style={formStyles.AUITextInput}
             onChangeText={(newText) => {
-              setAddressRec((prevState: any) => ({
+              setClientData((prevState: any) => ({
                 ...prevState, line1: newText
               }))
             }}
-            defaultValue={addressRec.line1}
+            defaultValue={clientData.line1}
           />
         </View>
 
@@ -58,11 +58,11 @@ const AddressUI: React.FC = () => {
             placeholder='Line 2'
             style={formStyles.AUITextInput}
             onChangeText={(newText) => {
-              setAddressRec((prevState: any) => ({
+              setClientData((prevState: any) => ({
                 ...prevState, line2: newText
               }))
             }}
-            defaultValue={addressRec.line2}
+            defaultValue={clientData.line2}
           />
         </View>
 
@@ -74,11 +74,11 @@ const AddressUI: React.FC = () => {
               placeholder='Line 3'
               style={formStyles.AUITextInput}
               onChangeText={(newText) => {
-                setAddressRec((prevState: any) => ({
+                setClientData((prevState: any) => ({
                   ...prevState, line3: newText
                 }))
               }}
-              defaultValue={addressRec.line3}
+              defaultValue={clientData.line3}
             />
           </View>
 
@@ -89,11 +89,11 @@ const AddressUI: React.FC = () => {
               placeholder='Town'
               style={formStyles.AUITextInput}
               onChangeText={(newText) => {
-                setAddressRec((prevState: any) => ({
+                setClientData((prevState: any) => ({
                   ...prevState, town: newText
                 }))
               }}
-              defaultValue={addressRec.town}
+              defaultValue={clientData.town}
             />
           </View>
         </View>
@@ -107,11 +107,11 @@ const AddressUI: React.FC = () => {
               placeholder='County'
               style={formStyles.AUITextInput}
               onChangeText={(newText) => {
-                setAddressRec((prevState: any) => ({
+                setClientData((prevState: any) => ({
                   ...prevState, county: newText
                 }))
               }}
-              defaultValue={addressRec.county}
+              defaultValue={clientData.county}
             />
           </View>
 
@@ -123,11 +123,11 @@ const AddressUI: React.FC = () => {
               placeholder='Country'
               style={formStyles.AUITextInput}
               onChangeText={(newText) => {
-                setAddressRec((prevState: any) => ({
+                setClientData((prevState: any) => ({
                   ...prevState, country: newText
                 }))
               }}
-              defaultValue={addressRec.country}
+              defaultValue={clientData.country}
             />
           </View>
         </View>

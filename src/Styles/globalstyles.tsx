@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     borderColor: '#000',
-    borderRadius: 5,
+    borderRadius: 3,
     borderWidth: 1,
     color: 'grey',
     width: '90%',
@@ -54,9 +54,14 @@ const styles = StyleSheet.create({
   TextInputWrapperText: {
     fontSize: 18,
   },
+  AUILabelHide: {
+    display: 'none',
+  },
   AUILabel: {
     fontSize: 16,
     marginLeft: 10,
+    marginBottom: 3,
+    marginTop: 5,
   },
 
 

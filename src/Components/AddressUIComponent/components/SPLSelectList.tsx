@@ -2,9 +2,9 @@
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, ScrollView } from 'react-native'
 import React, {useState, useContext, useEffect} from 'react'
 
-import styles from '../../../Screens/styles/globalstyles'
+import styles from '../../../Styles/globalstyles'
 import { SPLSelectListProps } from '../../Props'
-import { AddressRecContext } from './AddressRec'
+import { ClientDataContext } from '../../../Context/ClientData'
 
 const SPLSelectList: React.FC<SPLSelectListProps> = ({
   datakey, 
@@ -14,7 +14,7 @@ const SPLSelectList: React.FC<SPLSelectListProps> = ({
   showAddressUI,
   setShowAddressUI
 }: SPLSelectListProps) => {
-  const [addressRec, setAddressRec] = useContext(AddressRecContext)
+  const [clientData, setClientData] = useContext(ClientDataContext)
   const [selectedID, setSelectedID] = useState<string>('')
   const [selectedSomething, setSelectedSomething] = useState<boolean>(false)
 
@@ -22,7 +22,7 @@ const SPLSelectList: React.FC<SPLSelectListProps> = ({
   useEffect(() => {
     console.log('useEffect state update selectedID is: ', selectedID)
     console.log('useEffect state update selectedSomething is: ', selectedSomething)
-    //  this works returns the record but also feels very hacky hmmmm must be a better way
+    //  works but feels very hacky hmmmm must be a better way
     if (selectedSomething==true && selectedID!='') return SPLselected()
   }, [selectedID, selectedSomething])
 
@@ -56,7 +56,7 @@ const SPLSelectList: React.FC<SPLSelectListProps> = ({
                 console.log('Status: ',data.credits_display_text)
 
                 //Populate the shared address record for display by React
-                setAddressRec(prevAddress => ({
+                setClientData(prevAddress => ({
                         ...prevAddress, 
                         company: data.organisation,
                         line1: data.line1,

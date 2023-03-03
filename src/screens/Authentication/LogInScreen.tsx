@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-import styles from '../../Screens/styles/globalstyles'
+import styles from '../../Styles/globalstyles'
 
 const LogInScreen = () => {
   return (

@@ -1,12 +1,13 @@
 //  AddressUIRecProvider
 import React, {useState, createContext} from 'react'
-export const AddressRecContext = createContext()
+
+export const ClientDataContext = createContext()
 
 //  ============
-//  Store records so the user can edit the values found by Simply Postcode
+//  Store records
 //  ============
 
-interface AddressRecordProps {
+interface ClientDataProps {
   title: string
   firstname: string
   middlenames: string
@@ -24,15 +25,15 @@ interface AddressRecordProps {
   status: string
 }
 
-interface AddressArgumentProps {
+interface ClientArgumentProps {
   children: React.ReactNode
 }
 
 //  props type is hacky sort it out later
-const AddressRecProvider = (props: AddressArgumentProps) => {
+const ClientDataProvider = (props: ClientArgumentProps) => {
 
   //  create state to store Address Records
-  const [addressRec, setAddressRec] = useState<AddressRecordProps>({
+  const [clientData, setClientData] = useState<ClientDataProps>({
     "title":"",
     "firstname": "",
     "middlenames": "",
@@ -51,11 +52,11 @@ const AddressRecProvider = (props: AddressArgumentProps) => {
   })
 
   return (
-    <AddressRecContext.Provider value={[addressRec, setAddressRec]}>
+    <ClientDataContext.Provider value={[clientData, setClientData]}>
       {props.children}
-    </AddressRecContext.Provider>
+    </ClientDataContext.Provider>
   )
 }
 
-export { AddressRecProvider }
+export { ClientDataProvider }
 

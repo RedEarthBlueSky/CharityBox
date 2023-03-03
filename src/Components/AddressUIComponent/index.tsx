@@ -1,13 +1,13 @@
 // UK Address Finder Component
 import { View, ScrollView, Text, Keyboard } from 'react-native'
 import React, { useState } from 'react'
-import styles from '../../Screens/styles/globalstyles'
+import styles from '../../Styles/globalstyles'
 import { 
   AddressUI,
   SPLSearch,
   SPLSelectList,
  } from './components'
-//  import { AddressRecProvider } from './components/AddressRec'
+//  import { ClientDataProvider } from './components/ClientData'
 
 const AddressUIComponent: React.FC = () => {
   //  My account https://www.simplylookupconsole.co.uk/A2CustomerAccount/main.aspx?coid=3333347653_30_30_______

@@ -10,8 +10,8 @@ import {
   PageTitleComponent,
 } from '../Components'
 //  grab ahold of the context
-import themeContext from './styles/themeContext'
-import styles from "./styles/globalstyles"
+import themeContext from '../Styles/themeContext'
+import styles from "../Styles/globalstyles"
 
 const HomeScreen: React.FC = ({ navigation }) => {
   const theme = useContext(themeContext)

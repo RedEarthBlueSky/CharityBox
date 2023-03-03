@@ -4,7 +4,7 @@ export * from './CauseIntroComponent'
 export * from './AddressUIComponent'
 export * from './PageTitleComponent'
 export * from './ScreenWrapperComponent'
-export * from './ClientUIComponent'
+export * from './CreateALoginComponent'
 
 //  Text Input
 export * from './TextInputClearable'

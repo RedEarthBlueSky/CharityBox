@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
-import styles from "../styles/globalstyles"
+import styles from "../../Styles/globalstyles"
 
 const CauseDashboardScreen: React.FC = () => {
   return (

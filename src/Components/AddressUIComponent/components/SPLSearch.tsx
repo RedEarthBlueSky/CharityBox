@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TextInput, Pressable } from 'react-native'
 import React, {useState} from 'react'
 
-import styles from '../../../Screens/styles/globalstyles'
+import styles from '../../../Styles/globalstyles'
 import { LineBreakComponent } from '../../LineBreakComponent'
 
 // =================================================

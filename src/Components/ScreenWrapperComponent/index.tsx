@@ -2,9 +2,9 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-import styles from '../../Screens/styles/globalstyles'
+import styles from '../../Styles/globalstyles'
 //  grab a hold of the context
-import themeContext from '../../Screens/styles/themeContext'
+import themeContext from '../../Styles/themeContext'
 
 type ScreenWrapperProps = {
   children:  React.ReactNode; //  child prop type
