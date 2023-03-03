@@ -17,3 +17,11 @@ export interface SPLSelectListProps {
   showAddressUI: boolean
   setShowAddressUI: selectedLinesArrayProps
 }
+
+export interface TextInputClearableProps {
+  label: string
+  placeholder: string
+  defaultValue: string
+  onChangeText: () => void
+  onPressClose: () => any
+}

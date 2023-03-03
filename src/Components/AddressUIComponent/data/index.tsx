@@ -1,8 +1,3 @@
-
-
-
-
-
 const clientDetailsData = [
   // key is used for 3 places defaultValue, onChangeText, onPressClose
   {
@@ -19,11 +14,22 @@ const clientDetailsData = [
   },
   {
     //  set to email if required
+    //  tickbox
     label: 'Username',
     key: 'username',
   },
-  
-
+  {
+    //  set to email if required
+    //  tickbox
+    label: 'Password',
+    key: 'password',
+  },
+  {
+    //  set to email if required
+    //  tickbox
+    label: 'Confirm Password',
+    key: 'confirmpassword',
+  },
 ]
 
 const Titles =[

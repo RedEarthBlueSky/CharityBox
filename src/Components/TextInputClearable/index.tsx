@@ -4,27 +4,20 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/EvilIcons'
 
 import styles from '../../Screens/styles/globalstyles'
-
-interface TextInputClearableProps {
-  label: string
-  placeholder: string
-  defaultValue: string
-  onChangeText: () => void
-  onPressClose: () => any
-}
+import { TextInputClearableProps } from '../Props'
 
 const TextInputClearable: React.FC<TextInputClearableProps> = ({
-  label, 
+  fieldName, 
   placeholder,
   defaultValue,
   onChangeText,
   onPressClose,
-  setAddressRec,
+  isUsername,
 }) => {
-  const closeIcon = <Icon name="close-o" size={42} color={'grey'} />
+  const closeIcon = <Icon name="close-o" size={42} color={'#C7C7CD'} />
   return (
     <View style={styles.FormControl}>
-      <Text style={styles.AUILabel}>{label}</Text>
+      <Text style={styles.AUILabel}>{fieldName}</Text>
       <View style={styles.TextInputWrapper}>
         <TextInput 
           defaultValue={defaultValue}
@@ -35,11 +28,19 @@ const TextInputClearable: React.FC<TextInputClearableProps> = ({
           style={styles.H4}
         />
         <TouchableOpacity
-            onPress={onPressClose}
+          onPress={onPressClose}
         >
           {closeIcon}
         </TouchableOpacity>
       </View>
+      {/* Placeholder for email as Username Checkbox */}
+      { (isUsername === 'username') ?
+          <View>
+            <Text>Placeholder for;</Text>
+            <Text>Set Email as Username</Text>
+          </View>
+          : null
+      }
     </View>
   )
 }
