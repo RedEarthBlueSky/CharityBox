@@ -27,10 +27,12 @@ const TextInputClearable: React.FC<TextInputClearableProps> = ({
       <Text style={styles.AUILabel}>{label}</Text>
       <View style={styles.TextInputWrapper}>
         <TextInput 
-          style={styles.H4}
+          defaultValue={defaultValue}
+          multiline={false}
+          numberOfLines={1}
           placeholder={placeholder}
           onChangeText={onChangeText}
-          defaultValue={defaultValue}
+          style={styles.H4}
         />
         <TouchableOpacity
             onPress={onPressClose}
