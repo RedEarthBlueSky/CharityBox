@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   FormControl: {
-    marginHorizontal: 2,
-    marginVertical: 2,
+    marginHorizontal: 0,
+    marginVertical: 0,
   },
   AUITextInput: {
     borderColor: '#000',
@@ -41,26 +41,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderColor: '#000',
-    borderRadius: 3,
-    borderWidth: 1,
+    borderColor: '#C7C7CD',
+    borderBottomWidth: 2,
     color: 'grey',
-    width: '90%',
-    height: 40,
-    marginLeft: 10,
+    width: '100%',
+    height: 60,
     paddingLeft: 10,
   },
   TextInputWrapperText: {
     fontSize: 18,
-  },
-  AUILabelHide: {
-    display: 'none',
-  },
-  AUILabel: {
-    fontSize: 16,
-    marginLeft: 10,
-    marginBottom: 3,
-    marginTop: 5,
   },
 
 
@@ -128,6 +117,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 7,
   },
+  JoinTextInput: {
+    color: '#424242',
+    fontSize: 18,
+    fontWeight: 'bold',
+    height: 40,
+    paddingHorizontal: 5,
+    paddingVertical: 7,
+  },
   SPLbtn: {
     alignItems: 'center',
     alignSelf: 'flex-end',
@@ -153,7 +150,7 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     borderColor: '#3495eb',
     borderWidth: 2,
-    height: 40,
+    height: 55,
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
@@ -161,9 +158,16 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   TOText: {
-    fontSize: 16,
+    fontSize: 18,
     color: 'white',
   },
+  clientDetailsWrapper: {
+    borderWidth: 2,
+    borderColor: '#C7C7CD',
+    borderBottomWidth: 0,
+    margin: 0,
+    padding: 0,
+  }
 })
 
 export default styles

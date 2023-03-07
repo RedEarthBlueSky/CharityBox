@@ -13,6 +13,8 @@ const TextInputClearable: React.FC<TextInputClearableProps> = ({
   onChangeText,
   onPressClose,
   isUsername,
+  onBlur,
+  onFocus
 }) => {
 
   const [useLabel, setUseLabel] = useState<boolean>(true)
@@ -23,10 +25,6 @@ const TextInputClearable: React.FC<TextInputClearableProps> = ({
   
   return (
     <View style={styles.FormControl}>
-      <Text 
-        style={useLabel ? styles.AUILabel : styles.AUILabelHide}>
-          {fieldName}
-      </Text>
       <View style={styles.TextInputWrapper}>
         <TextInput 
           defaultValue={defaultValue}
@@ -34,15 +32,15 @@ const TextInputClearable: React.FC<TextInputClearableProps> = ({
           numberOfLines={1}
           placeholder={placeholder}
           onChangeText={onChangeText}
+          style={styles.JoinTextInput}
+          onBlur={onBlur}
+          onFocus={onFocus}
         />
         <TouchableOpacity
           onPress={onPressClose}
         >
           {closeIcon}
         </TouchableOpacity>
-      </View>
-      <View>
-        <Text>Some error text here</Text>
       </View>
     </View>
   )

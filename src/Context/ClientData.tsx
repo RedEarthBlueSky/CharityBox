@@ -10,7 +10,8 @@ export const ClientDataContext = createContext()
 interface ClientDataProps {
   firstname: string
   lastname: string
-  username: string | number
+  username: string
+  email: string
   company: string
   line1: string
   line2: string
@@ -20,6 +21,8 @@ interface ClientDataProps {
   postcode: string
   country: string
   status: string
+  mobile: string
+  password: string
 }
 
 interface ClientArgumentProps {
@@ -31,12 +34,12 @@ const ClientDataProvider = (props: ClientArgumentProps) => {
 
   //  create state to store Address Records
   const [clientData, setClientData] = useState<ClientDataProps>({
-    "title":"",
     "firstname": "",
-    "middlenames": "",
     "lastname":"",
+    "username": "",
     "email": "",
-    "telephone": "",
+    "mobile": " ",
+    "password":"",
     "company": "",
     "line1": "",
     "line2": "",
