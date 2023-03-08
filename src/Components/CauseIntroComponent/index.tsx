@@ -1,7 +1,7 @@
 //  Cause Intro Component
 import { StyleSheet, Text, View, Button } from 'react-native'
 import * as React from 'react'
-import { LineBreakComponent } from '../LineBreakComponent'
+import { BR } from '../LineBreakComponent'
 import styles from '../../Styles/globalstyles'
 
 const CauseIntroComponent = ({ navigation, theme }) => {
@@ -11,7 +11,7 @@ const CauseIntroComponent = ({ navigation, theme }) => {
       <Text style={[styles.H3, {color: theme.color}]}>
         A Charitable Organisation who wishes to aceept donations.
       </Text>
-      <LineBreakComponent />
+      <BR />
       <Button 
         title='Create Cause Profile' 
         onPress={() => navigation.navigate("Create Cause Profile")}

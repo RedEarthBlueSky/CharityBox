@@ -154,8 +154,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    maxWidth: '90%',
-    marginLeft: 10,
+    marginLeft: 0,
   },
   TOText: {
     fontSize: 18,

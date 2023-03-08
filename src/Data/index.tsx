@@ -12,7 +12,7 @@ const clientDetailsData = [
     placeholder: 'Email'
   },
   {
-    key: 'mobile',
+    key: 'mobilephone',
     placeholder: 'Mobile number'
   },
   {

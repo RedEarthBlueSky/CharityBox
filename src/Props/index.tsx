@@ -25,4 +25,6 @@ export interface TextInputClearableProps {
   isUsername: string
   onChangeText: () => void
   onPressClose: () => any
+  onFocus: () => void
+  onBlur: () => void
 }

@@ -2,11 +2,9 @@ import { View, Text, StyleSheet, TextInput, Pressable } from 'react-native'
 import React, {useState} from 'react'
 
 import styles from '../../../Styles/globalstyles'
-import { LineBreakComponent } from '../../LineBreakComponent'
+import { BR } from '../../LineBreakComponent'
 
-// =================================================
 //    Search box and button + Get list from server
-// =================================================
 
 const SPLSearch = ({
   SPLSearchButton, 

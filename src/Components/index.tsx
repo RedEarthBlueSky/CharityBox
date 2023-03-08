@@ -1,4 +1,4 @@
-export * from './LineBreakComponent'
+import { BR } from './LineBreakComponent'
 export * from './BenefactorIntroComponent'
 export * from './CauseIntroComponent'
 export * from './AddressUIComponent'
@@ -11,3 +11,5 @@ export * from './TextInputClearable'
 
 //  Buttons
 export * from './ButtonComponents/BasicButtonComponent'
+
+export { BR }

@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Button } from 'react-native'
 import * as React from 'react'
-import { LineBreakComponent } from '../LineBreakComponent'
+import { BR } from '../LineBreakComponent'
 import styles from '../../Styles/globalstyles'
 
 const BenefactorIntroComponent: React.FC = ({navigation, theme}) => {
@@ -13,17 +13,17 @@ const BenefactorIntroComponent: React.FC = ({navigation, theme}) => {
           An individual who wishes to donate.
       </Text>
       <Text style={[styles.P, {color: theme.color}]}> Default font size </Text>
-      <LineBreakComponent />
+      <BR />
       <Button 
         title='Create Benefactor Profile' 
         onPress={() => navigation.navigate("Create Benefactor Profile")}
       />
-      <LineBreakComponent />
+      <BR />
       <Button 
         title='Benefactors Find out More' 
         onPress={() => navigation.navigate("Benefactor Information")}
       />
-      <LineBreakComponent />
+      <BR />
     </View>
   )
 }

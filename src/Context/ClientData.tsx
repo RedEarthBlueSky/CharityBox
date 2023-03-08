@@ -12,6 +12,9 @@ interface ClientDataProps {
   lastname: string
   username: string
   email: string
+  mobilephone: string
+  password: string
+  status: string
   company: string
   line1: string
   line2: string
@@ -20,9 +23,6 @@ interface ClientDataProps {
   county: string
   postcode: string
   country: string
-  status: string
-  mobile: string
-  password: string
 }
 
 interface ClientArgumentProps {
@@ -38,8 +38,9 @@ const ClientDataProvider = (props: ClientArgumentProps) => {
     "lastname":"",
     "username": "",
     "email": "",
-    "mobile": " ",
+    "mobilephone": "",
     "password":"",
+    "status": "", // Charity, Company or Individual
     "company": "",
     "line1": "",
     "line2": "",
@@ -48,7 +49,6 @@ const ClientDataProvider = (props: ClientArgumentProps) => {
     "county": "",
     "postcode": "",
     "country": "",
-    "status": "", // Charity, Company or Individual
   })
 
   return (

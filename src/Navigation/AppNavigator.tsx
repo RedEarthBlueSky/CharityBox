@@ -11,10 +11,10 @@ import {
   BenefactorInformationScreen,
   LogInScreen,
   RegisterScreen,
-} from '../src/Screens'
+} from '../Screens'
 
-import theme from '../src/Styles/theme'
-import themeContext from '../src/Styles/themeContext'
+import theme from '../Styles/theme'
+import themeContext from '../Styles/themeContext'
 import { DarkTheme, DefaultTheme } from '@react-navigation/native'
 
 const AppNavigator = () => {

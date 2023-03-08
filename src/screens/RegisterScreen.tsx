@@ -17,11 +17,12 @@ const RegisterScreen:React.FC = () => {
     <View style={styles.container}>
       <ClientDataProvider>
         <PageTitleComponent
-          slug='Create Login Screen: template Benefactor & Cause' 
+          title='Become a Benefactor' 
           theme={theme}   
         />
         <CreateALoginComponent />
-        <AddressUIComponent />
+        {/* Move address UI to a separate page */}
+        {/* <AddressUIComponent /> */}
       </ClientDataProvider>
     </View>
   )

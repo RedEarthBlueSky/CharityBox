@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity, ScrollView } from '
 import React, {useState, useContext, useEffect} from 'react'
 
 import styles from '../../../Styles/globalstyles'
-import { SPLSelectListProps } from '../../Props'
+import { SPLSelectListProps } from '../../../Props'
 import { ClientDataContext } from '../../../Context/ClientData'
 
 const SPLSelectList: React.FC<SPLSelectListProps> = ({
