@@ -147,17 +147,19 @@ const styles = StyleSheet.create({
   },
   SubmitTO: {
     backgroundColor: '#3495eb',
-    borderRadius: 3,
+    borderRadius: 0,
     borderColor: '#3495eb',
     borderWidth: 2,
-    height: 55,
+    height: 58,
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
     marginLeft: 0,
+    marginTop: 5,
   },
   TOText: {
     fontSize: 18,
+    fontWeight: 'bold',
     color: 'white',
   },
   clientDetailsWrapper: {

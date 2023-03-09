@@ -4,17 +4,17 @@ import React, {useState, useContext, useEffect} from 'react'
 
 import styles from '../../Styles/globalstyles'
 import { ClientDataContext } from '../../Context/ClientData'
-import { TextInputClearable, brH1, BR } from '../../Components'
+import { TextInputClearable, BR } from '../../Components'
 import { clientDetailsData } from '../../Data'
+import { fetchEmailValidation } from '../../APIs'
 
 const CreateALoginComponent: React.FC = () => {
   const [clientData, setClientData] = useContext(ClientDataContext)
   const [errorMessage, setErrorMessage] = useState('')
   useEffect(() => {
-    // console.log('Client data from CreateALoginComponent: ', clientData)
+    //  console.log(JSON.stringify(clientData, null, 2 ))
     setErrorMessage('')
-    // fetchEmailValidation('redearthbluesea@gmail.com')
-
+    // fetchEmailValidation('ian@isalt.digital',setErrorMessage)
   },[clientData])
 
   const onChangeTextHandler = (newText: string, key: string) => {
@@ -29,76 +29,48 @@ const CreateALoginComponent: React.FC = () => {
     }))
   )
 
-  const AbstractEmailAPIKey = '0b95b8f74e934242b325bae682762c11'
+  const keyList = [
+    'firstname',
+    'lastname',
+    'email',
+    'mobilephone',
+    'password',
+  ]
 
-  const fetchEmailValidation = async (email: string) => {
-    setErrorMessage('')
-    const fetchData = (url: string):Promise<any> => {
-      return fetch(url)
-            .then((response) => response.json())
-            .then((data) => {
-              console.log(data)
-              //  Do something if the problems is our end
-              //  Most likely an API key issue
-              if (data.is_valid_format.value){
-                if (data.deliverability == 'DELIVERABLE'){
-                  console.log(`${data.email} is ${data.deliverability} AND format is valid`)
-                } else {
-                  setErrorMessage(`${data.deliverability} email please resubmit`)
-                  return
-                }   
-              } else {
-                setErrorMessage(`Email format is invalid please resubmit`)
-                return
-              }            
-            });}
-    const emailValidationLink = `https://emailvalidation.abstractapi.com/v1/?api_key=${AbstractEmailAPIKey}&email=${email}`
-    fetchData(emailValidationLink)
-  }
-
-  const authenticateInput = (key: string) => {
-    if (key === 'firstname'  && !clientData[key]) { 
-      setErrorMessage(`Please enter your First name`) 
-    }
-    if (key === 'lastname'  && !clientData[key]) { 
-      setErrorMessage(`Please enter your Last name`) 
-    }
-    if (key === 'email') { 
-      if (!clientData[key]) {
-        setErrorMessage(`Please specify your Email address`) 
+  const authenticateInput = (key: string, placeholder:string) => {
+    keyList.forEach((keyItem) => {
+      if (key === keyItem) {
+        if (!clientData[key]) {
+          setErrorMessage(`Please provide a ${placeholder}`)
+          return
+        } else {
+          if (key==='email' || key==='mobilephone' || key==='password') {
+            console.log(`${placeholder} requires validation`)
+            return
+          }
+        }
+        console.log(`${placeholder} does not require validation`)
       }
-      console.log('Validate email address!')
-    }
-    if (key === 'mobilephone'  && !clientData[key]) { 
-      setErrorMessage(`Please enter your Mobile number`) 
-    }
-    if (key === 'password'  && !clientData[key]) { 
-      setErrorMessage(`Please create a password`) 
-    }
+    })
   }
 
 
   return (
     <View style={styles.componentContainer}>
-      <BR />
-      <Text style={styles.H4}>
-        Join Free.  Make your better world
-      </Text>
-
       <View>
         { ( errorMessage !== '' ) ?
             <Text style={{
               color: '#cc2b23',
-              fontSize: 18,
-              fontWeight: '400',
+              fontSize: 16,
+              fontWeight: 'bold',
               paddingLeft: 2,
-              paddingTop: 5,
-              height: 43,
+              paddingTop: 0,
+              height: 32,
             }}
             
             >{errorMessage}</Text>
             : 
-            <><BR /><BR /></>      
+            <><Text style={{height: 32,}}></Text></>      
    
         }
       </View>
@@ -109,27 +81,30 @@ const CreateALoginComponent: React.FC = () => {
               <TextInputClearable 
                 placeholder={client.placeholder}                
                 defaultValue={clientData[client.key]}
-                key={client.key} // Key is not a property
+                key={client.key} // Key is not a passable property
                 isUsername={client.key}
                 onChangeText={(newText: string) => onChangeTextHandler(newText, client.key)}
                 onPressClose={() => onPressCloseHandler(client.key)}
                 onBlur={() => {
-                  console.log(`${client.key} lost focus`)
-                  authenticateInput(client.key)
+                  // console.log(`${client.key} lost focus`)
+                  authenticateInput(client.key, client.placeholder)
                 }}
-                onFocus={() => console.log(`${client.key} got focus`)}
+                // onFocus={() => console.log(`${client.key} got focus`)}
               />
             )
           })
         }
       </View>
-      <BR />
       <TouchableOpacity 
         style={styles.SubmitTO}
         onPress={() => console.log('Join now pressed')}
       >
         <Text style={styles.TOText}>Join now</Text>
       </TouchableOpacity>
+      <BR />
+      <Text style={styles.H4}>
+        Join Free.  Make your better world
+      </Text>
     </View>
   )
 }

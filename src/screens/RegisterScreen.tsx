@@ -6,6 +6,7 @@ import {
   ScreenWrapperComponent,
   PageTitleComponent,
   CreateALoginComponent,
+  BR,
 } from '../Components'
 import styles from '../Styles/globalstyles'
 import themeContext from '../Styles/themeContext'
@@ -24,6 +25,9 @@ const RegisterScreen:React.FC = () => {
         {/* Move address UI to a separate page */}
         {/* <AddressUIComponent /> */}
       </ClientDataProvider>
+      <BR />
+      <BR />
+      <Text style={[styles.H2, {color: theme.color}]}>Become a Benefactor</Text>
     </View>
   )
 }
