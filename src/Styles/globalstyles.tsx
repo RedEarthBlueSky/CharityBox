@@ -47,6 +47,16 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 60,
     paddingLeft: 10,
+    paddingRight: 10,
+  },
+  JoinTextInput: {
+    color: '#424242',
+    fontSize: 18,
+    fontWeight: 'bold',
+    height: 40,
+    marginLeft: 10,
+    paddingHorizontal: 5,
+    paddingVertical: 7,
   },
   TextInputWrapperText: {
     fontSize: 18,
@@ -115,14 +125,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     height: 40,
     paddingHorizontal: 10,
-    paddingVertical: 7,
-  },
-  JoinTextInput: {
-    color: '#424242',
-    fontSize: 18,
-    fontWeight: 'bold',
-    height: 40,
-    paddingHorizontal: 5,
     paddingVertical: 7,
   },
   SPLbtn: {

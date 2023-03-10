@@ -1,64 +1,55 @@
 //  Client UI Component
 import { View, Text, TouchableOpacity } from 'react-native'
 import React, {useState, useContext, useEffect} from 'react'
+import NetInfo from '@react-native-community/netinfo'
 
 import styles from '../../Styles/globalstyles'
 import { ClientDataContext } from '../../Context/ClientData'
 import { TextInputClearable, BR } from '../../Components'
-import { clientDetailsData } from '../../Data'
+import { clientDetailsData, keyList } from '../../Data'
 import { fetchEmailValidation } from '../../APIs'
+import {fetchDeviceConnected,onChangeTextHandler,onPressCloseHandler,} from '../../Utils'
 
 const CreateALoginComponent: React.FC = () => {
   const [clientData, setClientData] = useContext(ClientDataContext)
+  const [isConnected, setIsConnected] = useState<boolean>(false)
   const [errorMessage, setErrorMessage] = useState('')
-  useEffect(() => {
+  useEffect( () => {
     //  console.log(JSON.stringify(clientData, null, 2 ))
-    setErrorMessage('')
     // fetchEmailValidation('ian@isalt.digital',setErrorMessage)
-  },[clientData])
+    setErrorMessage('')
+    fetchDeviceConnected(NetInfo, setIsConnected, isConnected, setErrorMessage)
+  },[clientData, isConnected])
 
-  const onChangeTextHandler = (newText: string, key: string) => {
-    setClientData((prevState: any) => ({
-      ...prevState, [key]: newText
-    }))
+  const validateMobileNumber = (mobileNumber: string, setErrorMessage: any) => {
+    const reg = /^[0]?[789]\d{9}$/
+    console.log('Mobile number: ', mobileNumber)
+    console.log('Test the number: ', reg.test(mobileNumber))
   }
 
-  const onPressCloseHandler = (key:string) => (
-    setClientData((prevState: any) => ({
-      ...prevState, [key]: ''
-    }))
-  )
-
-  const keyList = [
-    'firstname',
-    'lastname',
-    'email',
-    'mobilephone',
-    'password',
-  ]
-
-  const authenticateInput = (key: string, placeholder:string) => {
+  const authInputOnBlur = (key: string, placeholder:string) => {
     keyList.forEach((keyItem) => {
       if (key === keyItem) {
         if (!clientData[key]) {
           setErrorMessage(`Please provide a ${placeholder}`)
           return
-        } else {
-          if (key==='email' || key==='mobilephone' || key==='password') {
-            console.log(`${placeholder} requires validation`)
-            return
-          }
+        } else if (key === 'firstname' || 'lastname') {
+          console.log(`${placeholder} does not require validation`)
         }
-        console.log(`${placeholder} does not require validation`)
       }
     })
   }
 
+  const authMobileInput = (key: string) => {
+    if (key === 'mobilephone') {
+      console.log(`${key} value: `, clientData[key])
+    }
+  }
 
   return (
     <View style={styles.componentContainer}>
       <View>
-        { ( errorMessage !== '' ) ?
+        {(errorMessage !== '' || isConnected == false) ?
             <Text style={{
               color: '#cc2b23',
               fontSize: 16,
@@ -83,11 +74,14 @@ const CreateALoginComponent: React.FC = () => {
                 defaultValue={clientData[client.key]}
                 key={client.key} // Key is not a passable property
                 isUsername={client.key}
-                onChangeText={(newText: string) => onChangeTextHandler(newText, client.key)}
-                onPressClose={() => onPressCloseHandler(client.key)}
+                onChangeText={(newText: string) => {
+                  onChangeTextHandler(newText, client.key, setClientData)
+                }}
+                onPressClose={() => onPressCloseHandler(
+                  client.key, setClientData)}
                 onBlur={() => {
                   // console.log(`${client.key} lost focus`)
-                  authenticateInput(client.key, client.placeholder)
+                  authInputOnBlur(client.key, client.placeholder)
                 }}
                 // onFocus={() => console.log(`${client.key} got focus`)}
               />
