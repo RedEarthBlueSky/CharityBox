@@ -11,6 +11,7 @@ export const fetchEmailValidation = async (
     emailValid: boolean,
   ) => {
   setErrorMessage('')
+  setEmailValid(false)
   //  make sure we have the correct key
   if ( key !== 'email') {
     setErrorMessage('Field error not email input')

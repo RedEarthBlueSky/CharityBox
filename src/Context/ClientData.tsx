@@ -11,7 +11,7 @@ interface ClientDataProps {
   fullname: string
   username: string
   email: string
-  mobilephone: string
+  mobile: string
   password: string
   status: string
   company: string
@@ -36,7 +36,7 @@ const ClientDataProvider = (props: ClientArgumentProps) => {
     "fullname": "",
     "username": "",
     "email": "",
-    "mobilephone": "",
+    "mobile": "",
     "password":"",
     "status": "", // Charity, Company or Individual
     "company": "",

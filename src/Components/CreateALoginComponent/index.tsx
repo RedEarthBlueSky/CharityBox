@@ -19,9 +19,10 @@ const CreateALoginComponent: React.FC = () => {
   const [clientData, setClientData] = useContext(ClientDataContext)
   const [isConnected, setIsConnected] = useState<boolean>(false)
   const [emailValid, setEmailValid] =  useState<boolean>(false)
+  const [mobileValid, setMobileValid] =  useState<boolean>(false)
   const [errorMessage, setErrorMessage] = useState('')
   useEffect( () => {
-    setEmailValid(false)
+    // console.log(JSON.stringify(clientData, null, 2))
     setErrorMessage('')
     fetchDeviceConnected(NetInfo, setIsConnected, isConnected, setErrorMessage)
   },[clientData, isConnected])
@@ -36,15 +37,18 @@ const CreateALoginComponent: React.FC = () => {
     //  not using a forEach because you cannot break from the loop
     for (const client of clientDetailsData) {
       if (!clientData[client.key]) {
-        console.log(client.placeholder, 'has no data')
         setErrorMessage(`Please provide your ${client.placeholder}`)
         break
       }
-      if (client.key === 'email' && !emailValid) {
+      //  set email valid back to !emailValid for production
+      if (client.key === 'email' && emailValid) {
         fetchEmailValidation(client.key, clientData[client.key], setErrorMessage, setEmailValid, emailValid)
         break
       }
-
+      if (client.key === 'mobile' && !mobileValid) {
+        validateMobileNumber(clientData[client.key])
+        break
+      }
     }
   }
 
