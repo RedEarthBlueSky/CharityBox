@@ -8,8 +8,7 @@ export const ClientDataContext = createContext()
 //  ============
 
 interface ClientDataProps {
-  firstname: string
-  lastname: string
+  fullname: string
   username: string
   email: string
   mobilephone: string
@@ -34,8 +33,7 @@ const ClientDataProvider = (props: ClientArgumentProps) => {
 
   //  create state to store Address Records
   const [clientData, setClientData] = useState<ClientDataProps>({
-    "firstname": "",
-    "lastname":"",
+    "fullname": "",
     "username": "",
     "email": "",
     "mobilephone": "",

@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     paddingHorizontal: 5,
     paddingVertical: 7,
+    width: '80%'
   },
   TextInputWrapperText: {
     fontSize: 18,

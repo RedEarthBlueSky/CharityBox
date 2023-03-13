@@ -1,5 +1,4 @@
 //  Client UI Utils
-
 //  check the phone is connected to a network
 export const fetchDeviceConnected = async (
     NetInfo:any, 

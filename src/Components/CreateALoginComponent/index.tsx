@@ -6,65 +6,54 @@ import NetInfo from '@react-native-community/netinfo'
 import styles from '../../Styles/globalstyles'
 import { ClientDataContext } from '../../Context/ClientData'
 import { TextInputClearable, BR } from '../../Components'
+import { ErrorMessageComponent } from './components'
 import { clientDetailsData, keyList } from '../../Data'
 import { fetchEmailValidation } from '../../APIs'
-import {fetchDeviceConnected,onChangeTextHandler,onPressCloseHandler,} from '../../Utils'
+import {
+  fetchDeviceConnected,
+  onChangeTextHandler,
+  onPressCloseHandler,
+} from '../../Utils'
 
 const CreateALoginComponent: React.FC = () => {
   const [clientData, setClientData] = useContext(ClientDataContext)
   const [isConnected, setIsConnected] = useState<boolean>(false)
+  const [emailValid, setEmailValid] =  useState<boolean>(false)
   const [errorMessage, setErrorMessage] = useState('')
   useEffect( () => {
-    //  console.log(JSON.stringify(clientData, null, 2 ))
-    // fetchEmailValidation('ian@isalt.digital',setErrorMessage)
+    setEmailValid(false)
     setErrorMessage('')
     fetchDeviceConnected(NetInfo, setIsConnected, isConnected, setErrorMessage)
   },[clientData, isConnected])
 
-  const validateMobileNumber = (mobileNumber: string, setErrorMessage: any) => {
+  const validateMobileNumber = (mobileNumber: string) => {
     const reg = /^[0]?[789]\d{9}$/
     console.log('Mobile number: ', mobileNumber)
     console.log('Test the number: ', reg.test(mobileNumber))
   }
 
-  const authInputOnBlur = (key: string, placeholder:string) => {
-    keyList.forEach((keyItem) => {
-      if (key === keyItem) {
-        if (!clientData[key]) {
-          setErrorMessage(`Please provide a ${placeholder}`)
-          return
-        } else if (key === 'firstname' || 'lastname') {
-          console.log(`${placeholder} does not require validation`)
-        }
+  const authenticateInput = () => {
+    //  not using a forEach because you cannot break from the loop
+    for (const client of clientDetailsData) {
+      if (!clientData[client.key]) {
+        console.log(client.placeholder, 'has no data')
+        setErrorMessage(`Please provide your ${client.placeholder}`)
+        break
       }
-    })
-  }
+      if (client.key === 'email' && !emailValid) {
+        fetchEmailValidation(client.key, clientData[client.key], setErrorMessage, setEmailValid, emailValid)
+        break
+      }
 
-  const authMobileInput = (key: string) => {
-    if (key === 'mobilephone') {
-      console.log(`${key} value: `, clientData[key])
     }
   }
 
   return (
     <View style={styles.componentContainer}>
-      <View>
-        {(errorMessage !== '' || isConnected == false) ?
-            <Text style={{
-              color: '#cc2b23',
-              fontSize: 16,
-              fontWeight: 'bold',
-              paddingLeft: 2,
-              paddingTop: 0,
-              height: 32,
-            }}
-            
-            >{errorMessage}</Text>
-            : 
-            <><Text style={{height: 32,}}></Text></>      
-   
-        }
-      </View>
+      <ErrorMessageComponent 
+        errorMessage={errorMessage} 
+        isConnected={isConnected} 
+      />
       <View style={styles.clientDetailsWrapper}>
         { 
           clientDetailsData.map((client) => {
@@ -77,13 +66,7 @@ const CreateALoginComponent: React.FC = () => {
                 onChangeText={(newText: string) => {
                   onChangeTextHandler(newText, client.key, setClientData)
                 }}
-                onPressClose={() => onPressCloseHandler(
-                  client.key, setClientData)}
-                onBlur={() => {
-                  // console.log(`${client.key} lost focus`)
-                  authInputOnBlur(client.key, client.placeholder)
-                }}
-                // onFocus={() => console.log(`${client.key} got focus`)}
+                onPressClose={() => onPressCloseHandler(client.key, setClientData)}
               />
             )
           })
@@ -91,7 +74,7 @@ const CreateALoginComponent: React.FC = () => {
       </View>
       <TouchableOpacity 
         style={styles.SubmitTO}
-        onPress={() => console.log('Join now pressed')}
+        onPress={() => authenticateInput()}
       >
         <Text style={styles.TOText}>Join now</Text>
       </TouchableOpacity>

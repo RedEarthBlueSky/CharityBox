@@ -20,7 +20,6 @@ const TextInputClearable: React.FC<TextInputClearableProps> = ({
 
   return (
     <View style={styles.FormControl}>
-      { (isUsername !== 'mobilephonelater') ?
         <View style={styles.TextInputWrapper}>
           <View 
             style={{
@@ -45,17 +44,6 @@ const TextInputClearable: React.FC<TextInputClearableProps> = ({
             {closeIcon}
           </TouchableOpacity>
         </View>
-        : 
-        // <View style={styles.TextInputWrapper}>
-        //   <Text>react-native-phone-number-input package future iterations</Text>
-        //   <TouchableOpacity
-        //     onPress={onPressClose}
-        //   >
-        //     {closeIcon}
-        //   </TouchableOpacity>
-        // </View>
-        null
-      }
     </View>
   )
 }
