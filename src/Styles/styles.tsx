@@ -56,27 +56,12 @@ export const styles = StyleSheet.create({
       marginRight: 10,
     },
     rowFlexContainer: {
-      display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
       maxWidth: '100%',
     },
     colFlex: {
-      display: 'flex',
       flexDirection: 'column',
       // backgroundColor: 'blue',
-    },
-    iconContainer: {
-      // backgroundColor: 'red',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      marginLeft: 15,
-      paddingTop: 5,
-      width: '42%',
-    },
-    icon: {
-      height: 30,
-      width: 30,
-      marginLeft: 10,
     },
 })

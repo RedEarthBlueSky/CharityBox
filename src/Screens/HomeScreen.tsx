@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
-import { HeaderComponent } from '../Components'
+import { HeaderComponent } from '../Components/organisms'
 import { styles } from '../Styles/styles'
 
 const HomeScreen:React.FC = () => {
