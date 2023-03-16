@@ -3,10 +3,11 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 import { IconContainer } from '../molecules'
-import { headerIconsArray } from '../../Data/organismData'
+import { headerIconsData } from '../../Data/organismData'
 import { styles } from '../../Styles/styles'
 
 const HeaderComponent:React.FC = () => {
+  console.log(headerIconsData)
   return (
     <View style={styles.rowFlexContainer}>   
       {/* Logo     */}
@@ -17,7 +18,7 @@ const HeaderComponent:React.FC = () => {
         <Text style={styles.H3}>CharityBox</Text>
       </View>
       <IconContainer 
-        iconArray={headerIconsArray}
+        iconArray={headerIconsData}
       />
       {/* <Text style={styles.P}>Manage your gift giving</Text> */}
     </View>

@@ -8,14 +8,20 @@ export const aStyles = StyleSheet.create({
     marginLeft: 10,
   },
   unreadBadge: {
-    backgroundColor: '#ff3250',
-    position: 'absolute',
-    left: 20,
-    bottom: 18,
-    height: 18,
-    borderRadius: 25,
     alignItems: 'center',
+    backgroundColor: '#ff3250',
+    bottom: 13,
+    position: 'absolute',
+    left: 15,
+    height: 20,
+    minWidth: 25,
+    borderRadius: 25,
     justifyContent: 'center',
     zIndex: 100,
+  },
+  unreadBadgeText: {
+    fontSize: 10,
+    color: '#fff',
+    fontWeight: '600',
   }
 })

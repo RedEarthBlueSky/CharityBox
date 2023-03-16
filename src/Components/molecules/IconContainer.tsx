@@ -9,6 +9,7 @@ export interface IconObjectProps {
   size: number
   color: string
   badge: boolean
+  unread: number
 }
 
 interface IconDataProps {
@@ -25,6 +26,7 @@ const IconContainer:React.FC<IconDataProps> = ({iconArray}:IconDataProps) => {
             size={icon.size}
             color={icon.color}
             badge={icon.badge}
+            unread={icon.unread}
             // Key is not a prop
             key={index}
           />
