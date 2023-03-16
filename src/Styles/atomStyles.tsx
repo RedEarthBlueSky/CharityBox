@@ -23,5 +23,10 @@ export const aStyles = StyleSheet.create({
     fontSize: 10,
     color: '#fff',
     fontWeight: '600',
-  }
+  },
+  logo: {
+    width: 60,
+    height: 60,
+    marginRight: 10,
+  },
 })

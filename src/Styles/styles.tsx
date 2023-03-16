@@ -50,11 +50,6 @@ export const styles = StyleSheet.create({
     },
     //  END TYPOGRAPHY
     //  ***************************
-    logo: {
-      width: 60,
-      height: 60,
-      marginRight: 10,
-    },
     rowFlexContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
