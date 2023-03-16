@@ -1,11 +1,15 @@
-import { View, Text } from 'react-native'
+import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
+
+import { HeaderComponent } from '../Components'
+import { styles } from '../Styles/styles'
 
 const HomeScreen:React.FC = () => {
   return (
-    <View>
-      <Text>Home Screen</Text>
-    </View>
+    <SafeAreaView style={styles.screenContainer}>
+      <HeaderComponent />
+      <Text style={styles.H1}>Home Screen</Text>
+    </SafeAreaView>
   )
 }
 
