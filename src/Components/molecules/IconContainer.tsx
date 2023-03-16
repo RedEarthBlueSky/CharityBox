@@ -10,13 +10,14 @@ export interface IconObjectProps {
   color: string
   badge: boolean
   unread: number
+  onPress: () => void
 }
 
 interface IconDataProps {
   [key:string]: IconObjectProps
 }
 
-const IconContainer:React.FC<IconDataProps> = ({iconArray}:IconDataProps) => {
+const IconContainer:React.FC<IconDataProps> = ({iconArray, onPress}:IconDataProps) => {
   return (
     <View style={mStyles.iconContainer}>
       {
@@ -27,6 +28,7 @@ const IconContainer:React.FC<IconDataProps> = ({iconArray}:IconDataProps) => {
             color={icon.color}
             badge={icon.badge}
             unread={icon.unread}
+            onPress={icon.onPress}
             // Key is not a prop
             key={index}
           />

@@ -11,15 +11,17 @@ interface IconButtonProps {
   color: string
   badge: boolean
   unread: number
+  onPress: () => void
 }
 
 const IconButton:React.FC<IconButtonProps> = (
-  {size, name, color, badge, unread }
+  {size, name, color, badge, unread, onPress }
   ) => {
   return (
     <View>
       <TouchableOpacity 
         key={name}
+        onPress={onPress}
       >
         {/* badge is true and unread does not equal 0 */}
         {badge && unread ?

@@ -1,4 +1,4 @@
-//  HEADER COMPONENT
+//  HEADER COMPONENT organism
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
@@ -7,7 +7,6 @@ import { headerIconsData } from '../../Data/organismData'
 import { styles } from '../../Styles/styles'
 
 const HeaderComponent:React.FC = () => {
-  console.log(headerIconsData)
   return (
     <View style={styles.rowFlexContainer}>   
       {/* Logo     */}
