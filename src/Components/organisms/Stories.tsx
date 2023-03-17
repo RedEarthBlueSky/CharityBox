@@ -1,13 +1,11 @@
 import { View, Text } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { oStyles, styles } from '../../Styles'
-import { getRapidAPI } from '../../APIs'
 
-const Stories = () => {
-
+const Stories:React.FC = () => {
+  const [storiesData, setStoriesData] = useState<Array<any>>([])
   useEffect(() => {
-    getRapidAPI()
   }, [])
 
   return (
