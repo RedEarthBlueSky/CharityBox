@@ -48,6 +48,9 @@ export const styles = StyleSheet.create({
       fontSize: Theme.P,
       fontWeight: 'bold',
     },
+    Psmall: {
+      fontSize: Theme.S
+    },
     //  END TYPOGRAPHY
     //  ***************************
     rowFlexContainer: {

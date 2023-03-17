@@ -13,11 +13,9 @@ const HeaderComponent:React.FC = () => {
       <Logo onPress={() => console.log('Logo got hit!')}/>
       <View style={styles.colFlex} >
         <Text style={styles.H3}>CharityBox</Text>
+        <Text style={styles.Psmall}>Manage your gift giving</Text>
       </View>
-      <IconContainer 
-        iconArray={headerIconsData}
-      />
-      {/* <Text style={styles.P}>Manage your gift giving</Text> */}
+      <IconContainer iconArray={headerIconsData}/>
     </View>
   )
 }

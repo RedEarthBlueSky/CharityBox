@@ -1,6 +1,6 @@
 
 //  How to get an event handler 
-//  From an organism to a molecule to an atom WOO HOO!
+//  From an organism, to a molecule, to an atom!
 const onPressHandler = () => {console.log('Do we work?')}
 //  Data for the Icons Molecule of the Header Component
 export const headerIconsData: { 

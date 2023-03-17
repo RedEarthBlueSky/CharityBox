@@ -1,10 +1,18 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
+
+import { oStyles, styles } from '../../Styles'
+import { getRapidAPI } from '../../APIs'
 
 const Stories = () => {
+
+  useEffect(() => {
+    getRapidAPI()
+  }, [])
+
   return (
-    <View>
-      <Text>Stories Component</Text>
+    <View style={styles.rowFlexContainer}>
+      <Text style={styles.H2}>Stories Component</Text>
     </View>
   )
 }
