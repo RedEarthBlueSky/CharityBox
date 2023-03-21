@@ -1,7 +1,8 @@
-import { View, Text } from 'react-native'
+import { View, Text, Image, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
-import { oStyles, styles } from '../../Styles'
+import { oStyles, styles, aStyles } from '../../Styles'
+import { storiesDummyData } from '../../Data/storiesOrgData'
 
 const Stories:React.FC = () => {
   const [storiesData, setStoriesData] = useState<Array<any>>([])
@@ -9,8 +10,24 @@ const Stories:React.FC = () => {
   }, [])
 
   return (
-    <View style={styles.rowFlexContainer}>
-      <Text style={styles.H2}>Stories Component</Text>
+    <View style={aStyles.storyScrollWrapper}>
+      <ScrollView 
+        horizontal
+        alwaysBounceHorizontal
+        contentContainerStyle={aStyles.storyContainer}
+      >
+        {
+          storiesDummyData.map((story, index) => (
+            <View key={index}>
+              <Image 
+                style={aStyles.storyItemWrapper} 
+                source={{uri: story.imageURL}}
+              />
+              <Text style={aStyles.storyItemText}>{story.name}</Text>
+            </View>
+          ))
+        }
+      </ScrollView>
     </View>
   )
 }

@@ -29,4 +29,35 @@ export const aStyles = StyleSheet.create({
     height: 60,
     marginRight: 10,
   },
+  //  story item Styles
+  //  transfter to Organism Stypes
+  storyScrollWrapper: {
+    backgroundColor: '#000',
+    borderRadius: 10,
+    height: 120,
+    marginTop: 20,
+    width: '95%',
+  },
+  storyContainer: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    height: 120,
+    justifyContent: 'center',
+    paddingLeft: 15,
+  },
+  storyItemWrapper: {
+    borderColor: 'orange',
+    borderRadius: 40,
+    borderWidth: 5,
+    height: 80,
+    width: 80,
+    marginRight: 10,
+  },
+  storyItemText: {
+    // backgroundColor: 'red',
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    width: '100%',
+  },
 })
