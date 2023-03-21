@@ -1,4 +1,12 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
+//  get width or screen
+const screenWidth = Dimensions.get('screen').width
+//  return width of screen as per a percentage as a number
+const percentage = (percent: number, total: number) => {
+  let result = ((percent / 100) * total).toFixed(2)
+  return parseInt(result)
+}
+const percentResult = percentage(90, screenWidth)
 
 //  Atom Styles Only
 export const aStyles = StyleSheet.create({
@@ -32,20 +40,20 @@ export const aStyles = StyleSheet.create({
   //  story item Styles
   //  transfter to Organism Stypes
   storyScrollWrapper: {
-    backgroundColor: '#000',
-    borderRadius: 10,
-    height: 120,
     marginTop: 20,
-    width: '95%',
+    height: 170,
+  },
+  scrollviewWrapper: {
+    width: '94%',
   },
   storyContainer: {
-    alignItems: 'center',
-    flexDirection: 'row',
+    // backgroundColor: 'black',
     height: 120,
-    justifyContent: 'center',
+    alignItems: 'center',
     paddingLeft: 15,
+    marginRight: 15,
   },
-  storyItemWrapper: {
+  storyItemImage: {
     borderColor: 'orange',
     borderRadius: 40,
     borderWidth: 5,
@@ -55,7 +63,6 @@ export const aStyles = StyleSheet.create({
   },
   storyItemText: {
     // backgroundColor: 'red',
-    color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
     width: '100%',
