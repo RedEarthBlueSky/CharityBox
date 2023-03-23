@@ -1,13 +1,11 @@
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
+import { StoryUserButton } from '../atoms'
 import { oStyles, styles, aStyles } from '../../Styles'
 import { USERS } from '../../Data/storiesOrgData'
 
 const Stories:React.FC = () => {
-  const [storiesData, setStoriesData] = useState<Array<any>>([])
-  useEffect(() => {
-  }, [])
   return (
     <View style={aStyles.storyScrollWrapper}>
       <ScrollView style={aStyles.scrollviewWrapper}>
@@ -18,18 +16,18 @@ const Stories:React.FC = () => {
             persistentScrollbar={true}
           >
             {
-              USERS.map((user, index) => (
-                <View key={index} id={'storyElement'}>
-                  <TouchableOpacity onPress={() => console.log(`${user.user} was Pressed!`)}>
-                    <Image style={aStyles.storyItemImage} source={{uri: user.image}}/>
-                    <Text style={aStyles.storyItemText}>{user.user}</Text>
-                  </TouchableOpacity>
-                </View>
+              USERS.map((story, index) => (
+                <StoryUserButton 
+                  uri={story.image}
+                  id={'storyItem'}
+                  onPress={() => console.log(`${story.user} was Pressed!`)}
+                  keyID={index}
+                  user={story.user}
+                />
               ))
             }
           </ScrollView>
       </ScrollView>
-      <Text style={styles.H2bold}>Stories</Text>
     </View>
   )
 }
