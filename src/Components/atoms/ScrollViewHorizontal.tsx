@@ -1,11 +1,23 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
+import { aStyles } from '../../Styles'
 
-const ScrollViewHorizontal = () => {
+//  this component design is so we can have a seperate 
+//  background color but keep the scroll bar
+const ScrollViewHorizontal = ({children}:any) => {
   return (
-    <View>
-      <Text>ScrollViewHorizontal</Text>
-    </View>
+    <ScrollView 
+      style={[aStyles.scrollviewWrapper]}
+    >
+      <ScrollView 
+        alwaysBounceHorizontal
+        contentContainerStyle={aStyles.storyContainer}
+        horizontal
+        persistentScrollbar={true}
+      >
+        {children}
+        </ScrollView>
+    </ScrollView>
   )
 }
 

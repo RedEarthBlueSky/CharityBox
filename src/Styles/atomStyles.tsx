@@ -1,12 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native'
-//  get width or screen
-const screenWidth = Dimensions.get('screen').width
-//  return width of screen as per a percentage as a number
-const percentage = (percent: number, total: number) => {
-  let result = ((percent / 100) * total).toFixed(2)
-  return parseInt(result)
-}
-const percentResult = percentage(90, screenWidth)
+import { prcntWidthToNum } from '../Utils/Atoms'
+
+const prcntResult = prcntWidthToNum(90, Dimensions)
 
 //  Atom Styles Only
 export const aStyles = StyleSheet.create({
@@ -40,18 +35,31 @@ export const aStyles = StyleSheet.create({
   //  story item Styles
   //  transfter to Organism Stypes
   storyScrollWrapper: {
+    // backgroundColor: 'red',
     marginTop: 20,
-    height: 170,
+    height: 120,
+    marginBottom: 0,
+  },
+  storyScrollWrapperAuto: {
+    marginTop: 0,
+    height: 120,
+    width: prcntResult,
   },
   scrollviewWrapper: {
-    width: '94%',
+    width: prcntResult,
   },
   storyContainer: {
     // backgroundColor: 'black',
     height: 120,
     alignItems: 'center',
     paddingLeft: 15,
-    marginRight: 15,
+    marginRight: 15, 
+  },
+  storyContainerAuto: {
+    height: 120,
+    alignItems: 'center',
+    paddingLeft: 15,
+    marginRight: 15, 
   },
   storyItemImage: {
     borderColor: 'orange',
@@ -68,3 +76,11 @@ export const aStyles = StyleSheet.create({
     width: '100%',
   },
 })
+
+const storyContainer = {
+  // backgroundColor: 'black',
+  height: 120,
+  alignItems: 'center',
+  paddingLeft: 15,
+  marginRight: 15, 
+}
