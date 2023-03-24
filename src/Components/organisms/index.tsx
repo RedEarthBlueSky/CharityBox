@@ -1,3 +1,3 @@
 export * from './HeaderComponent'
 export * from './Stories'
-export * from './StoriesAutoScroll'
+export * from './AutoScrolling'
