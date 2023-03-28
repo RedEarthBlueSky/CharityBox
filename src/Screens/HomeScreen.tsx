@@ -10,10 +10,10 @@ const HomeScreen:React.FC = () => {
   return (
     <SafeAreaView style={styles.screenContainer}>
       <HeaderComponent />
-      <Stories />
+      {/* <Stories /> */}
       <AutoScrolling 
         style={scrollStyles.scrolling2}
-        duration={3500}
+        duration={20000}
       > 
       <View style={styles.rowFlexContainer}>
         <TouchableOpacity>

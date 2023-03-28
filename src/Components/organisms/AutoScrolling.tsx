@@ -5,8 +5,6 @@ import {
   LayoutChangeEvent,
   Platform,
   View,
-  ViewStyle,
-  Text,
   ScrollView,
 } from 'react-native'
 
@@ -17,7 +15,7 @@ const AutoScrolling: React.FC<AutoScrollingProps> = ({
     style,
     children,
     endPaddingWidth = 10,
-    duration,
+    duration=4000,
     delay=0, 
     isLTR=false
   }:AutoScrollingProps) => {
@@ -29,6 +27,7 @@ const AutoScrolling: React.FC<AutoScrollingProps> = ({
   const contentRef = React.useRef<any>(null)
 
   React.useEffect(() => {
+    console.log(duration)
     return () => {
       contentRef.current = null
     }
