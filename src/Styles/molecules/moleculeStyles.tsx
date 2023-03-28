@@ -10,4 +10,7 @@ export const mStyles = StyleSheet.create({
     paddingTop: 5,
     width: '30%',
   },
+  ASViewWrapper: {
+    
+  }
 })

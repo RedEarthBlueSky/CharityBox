@@ -69,12 +69,26 @@ export const aStyles = StyleSheet.create({
     height: 80,
     width: 80,
     marginRight: 12,
+    //  box shadow need to separate out
+    
   },
   storyItemText: {
     // backgroundColor: 'red',
     fontWeight: 'bold',
     textAlign: 'center',
     width: '100%',
+  },
+  storyScrollText: {
+    // backgroundColor: 'red',
+    color: 'white',
+    fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    width: '100%',
+    // text shadow
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: {width: 0, height: 1},
+    textShadowRadius: 2,
   },
 })
 

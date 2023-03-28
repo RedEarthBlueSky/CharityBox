@@ -1,11 +1,14 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 
-import { aStyles } from '../../Styles/atomStyles'
+import { aStyles } from '../../Styles'
 
 interface LogoProps  {
   onPress: () => void
 }
+
+//  add as a prop?
+const logo = '../../../assets/logo.png'
 
 const Logo:React.FC<LogoProps> = ({onPress}) => {
   return (
@@ -13,7 +16,7 @@ const Logo:React.FC<LogoProps> = ({onPress}) => {
       <TouchableOpacity 
         onPress={onPress}
       >
-        <Image style={aStyles.logo} source={require('../../../assets/logo.png')}/>
+        <Image style={aStyles.logo} source={require(logo)}/>
       </TouchableOpacity>
     </View>
   )

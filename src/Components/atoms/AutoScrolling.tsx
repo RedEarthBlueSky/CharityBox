@@ -15,7 +15,7 @@ const AutoScrolling: React.FC<AutoScrollingProps> = ({
     style,
     children,
     endPaddingWidth = 10,
-    duration=4000,
+    duration,
     delay=0, 
     isLTR=false
   }:AutoScrollingProps) => {
@@ -104,12 +104,8 @@ const AutoScrolling: React.FC<AutoScrollingProps> = ({
     [children]
   );
 
-
-
-
-  
   return (
-    <View onLayout={measureContainerView} style={[style, {width:'95%'}]}>
+    <View onLayout={measureContainerView} style={[style, {width:'94%'}]}>
       <ScrollView
         horizontal={true}
         bounces={false}
@@ -133,8 +129,8 @@ const AutoScrolling: React.FC<AutoScrollingProps> = ({
       </ScrollView>
     </View>
   )
-
-  
 }
 
-export default React.memo(AutoScrolling)
+const AutoScroll = React.memo(AutoScrolling)
+
+export {AutoScroll}

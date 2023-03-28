@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-import { mStyles } from '../../Styles/moleculeStyles'
+import { mStyles } from '../../Styles'
 import { IconButton } from '../atoms'
 
 export interface IconObjectProps {

@@ -3,7 +3,7 @@ import React from 'react'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import { aStyles } from '../../Styles/atomStyles'
+import { aStyles } from '../../../Styles'
 
 interface IconButtonProps {
   size: number
