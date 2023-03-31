@@ -70,10 +70,23 @@ export const styles = StyleSheet.create({
     colFlex: {
       flexDirection: 'column',
       // backgroundColor: 'blue',
+      paddingTop: 0,
     },
+    colFlexPost: {
+        flexDirection: 'column',
+        // backgroundColor: 'blue',
+        paddingTop: 0,
+      },
     //  UI
     paragraphDivider: {
       //  View will only accept a height property not lineHeight
       height: 18,
+    },
+    pDividerBorder: {
+        borderBottomWidth: 1,
+        borderBottomColor: 'grey',
+        //  This should be expressed in terms of em
+        height: Text.P,
+        marginBottom: 0,
     }
 })

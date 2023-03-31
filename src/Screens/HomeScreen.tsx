@@ -5,7 +5,7 @@ import {
   HeaderComponent, 
   Stories, 
   StoriesAutoScroll,
-  Post,
+  Posts,
 } from '../Components/organisms'
 import { styles } from '../Styles'
 
@@ -15,7 +15,7 @@ const HomeScreen:React.FC = () => {
       <HeaderComponent />
       <Stories />
       {/* < StoriesAutoScroll /> */}
-      <Post />
+      <Posts />
       <Text style={styles.H1}>Home Screen</Text>
     </SafeAreaView>
   )

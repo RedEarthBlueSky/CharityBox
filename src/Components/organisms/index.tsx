@@ -4,4 +4,4 @@ export * from './Stories'
 //  Auto scrolling stories
 export * from './StoriesAutoScroll'
 
-export * from './Post'
+export * from './Posts'

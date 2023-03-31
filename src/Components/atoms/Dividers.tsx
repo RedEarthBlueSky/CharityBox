@@ -9,5 +9,11 @@ const PDivider = () => {
     </View>
   )
 }
+const PDividerBorder = () => {
+  return (
+    <View style={styles.pDividerBorder}>
+    </View>
+  )
+}
 
-export { PDivider }
+export { PDivider, PDividerBorder }

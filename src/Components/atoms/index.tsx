@@ -6,6 +6,9 @@ export * from './ScrollViewHorizontal'
 export * from './AutoScrolling'
 export * from './Logo'
 
-import { PDivider } from './Dividers'
+import { PDivider, PDividerBorder } from './Dividers'
 
-export { PDivider }
+export { 
+  PDivider, 
+  PDividerBorder 
+}
