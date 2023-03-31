@@ -18,6 +18,7 @@ const Stories:React.FC = () => {
                 //  key is not a property
                 key={index}
                 user={story.user}
+                name={story.name}
               />
             ))
           }

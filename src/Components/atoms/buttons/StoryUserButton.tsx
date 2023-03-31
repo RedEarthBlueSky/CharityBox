@@ -6,10 +6,10 @@ import { checkUsernameLength } from '../../../Utils/Atoms'
 import { StoryUserButtonProps } from '../../../Props/Atoms'
 
 const StoryUserButton:React.FC<StoryUserButtonProps> = (props:StoryUserButtonProps) => {
-  const { uri, id, onPress, user } = props
+  const { uri, id, onPress, user, name } = props
   return (
     <View id={id}>
-      <TouchableOpacity onPress={() => console.log(`${user} was Pressed!`)}>
+      <TouchableOpacity onPress={() => console.log(`${name} was Pressed!`)}>
         <Image style={aStyles.storyItemImage} source={{uri}}/>
         <Text style={aStyles.storyItemText}>
           {checkUsernameLength(user, 10)}

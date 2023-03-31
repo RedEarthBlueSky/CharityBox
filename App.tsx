@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { styles } from './src/Styles/styles'
+import { styles } from './src/Styles/global/styles'
 import { HomeScreen } from './src/Screens';
 import React from 'react';
 

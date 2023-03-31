@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native'
-import { Theme } from '../Theme'
+import { Text } from '../../Theme'
 
 export const styles = StyleSheet.create({
     screenContainer: {
         flex: 1,
-        backgroundColor: Theme.bgcolor,
+        backgroundColor: Text.bgcolor,
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
         paddingLeft: 15,
@@ -13,43 +13,52 @@ export const styles = StyleSheet.create({
     // ***************************
     // TYPOGRAPHY
     H1: {
-        color: Theme.color,
-        fontSize: Theme.XXL,
+        color: Text.color,
+        fontSize: Text.XXL,
     },
     H1bold: {
-        color: Theme.color,
-        fontSize: Theme.XL,
+        color: Text.color,
+        fontSize: Text.XL,
         fontWeight: 'bold',
     },
     H2: {
-        color: Theme.color,
-        fontSize: Theme.XL,
+        color: Text.color,
+        fontSize: Text.XL,
     },
     H2bold: {
-        color: Theme.color,
-        fontSize: Theme.XL,
+        color: Text.color,
+        fontSize: Text.XL,
         fontWeight: 'bold',
     },
     H3: {
-        color: Theme.color,
-        fontSize: Theme.L,
+        color: Text.color,
+        fontSize: Text.L,
     },
     H3bold: {
-        color: Theme.color,
-        fontSize: Theme.L,
+        color: Text.color,
+        fontSize: Text.L,
+        fontWeight: 'bold',
+    },
+    H4: {
+        color: Text.color,
+        fontSize: Text.M,
+    },
+    H4bold: {
+        color: Text.color,
+        fontSize: Text.M,
         fontWeight: 'bold',
     },
     P: {
-        color: Theme.color,
-        fontSize: Theme.P,
+        color: Text.color,
+        fontSize: Text.P,
     },
     Pbold: {
-      color: Theme.color,
-      fontSize: Theme.P,
+      color: Text.color,
+      fontSize: Text.P,
       fontWeight: 'bold',
     },
     Psmall: {
-      fontSize: Theme.S
+      fontSize: Text.S
     },
     //  END TYPOGRAPHY
     //  ***************************
@@ -62,4 +71,9 @@ export const styles = StyleSheet.create({
       flexDirection: 'column',
       // backgroundColor: 'blue',
     },
+    //  UI
+    paragraphDivider: {
+      //  View will only accept a height property not lineHeight
+      height: 18,
+    }
 })

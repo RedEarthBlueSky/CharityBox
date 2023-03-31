@@ -3,4 +3,5 @@ export interface StoryUserButtonProps {
   id: string
   onPress: () => void
   user: string
+  name: string
 }

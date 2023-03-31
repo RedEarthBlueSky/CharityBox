@@ -5,7 +5,7 @@ import React from 'react'
 import { IconContainer } from '../molecules'
 import { Logo } from '../atoms'
 import { headerIconsData } from '../../Data/organismData'
-import { styles } from '../../Styles/styles'
+import { styles } from '../../Styles/global/styles'
 
 const HeaderComponent:React.FC = () => {
   return (

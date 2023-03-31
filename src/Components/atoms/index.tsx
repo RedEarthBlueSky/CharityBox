@@ -5,3 +5,7 @@ export * from './ScrollViewHorizontal'
 //  exported element is AutoScroll memoized version
 export * from './AutoScrolling'
 export * from './Logo'
+
+import { PDivider } from './Dividers'
+
+export { PDivider }

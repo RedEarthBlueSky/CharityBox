@@ -3,5 +3,5 @@ export * from './HeaderComponent'
 export * from './Stories'
 //  Auto scrolling stories
 export * from './StoriesAutoScroll'
-//  Continuous horizontal scroll 
-export * from '../atoms/AutoScrolling'
+
+export * from './Post'
