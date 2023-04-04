@@ -4,7 +4,7 @@ import React from 'react'
 
 import { IconContainer } from '../molecules'
 import { Logo } from '../atoms'
-import { headerIconsData } from '../../Data/organismData'
+import { headerIconsData } from '../../Data'
 import { styles } from '../../Styles/global/styles'
 
 const HeaderComponent:React.FC = () => {
@@ -15,7 +15,7 @@ const HeaderComponent:React.FC = () => {
         <Text style={styles.H3}>CharityBox</Text>
         <Text style={styles.Psmall}>Manage your gift giving</Text>
       </View>
-      <IconContainer iconArray={headerIconsData}/>
+      <IconContainer iconArray={headerIconsData} width={30}/>
     </View>
   )
 }

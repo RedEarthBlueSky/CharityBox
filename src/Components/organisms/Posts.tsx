@@ -4,7 +4,7 @@ import React from 'react'
 import { styles, oStyles} from '../../Styles'
 import { PDivider, PDividerBorder } from '../atoms'
 import { PostHeader, PostMain, PostFooter } from '../molecules'
-import { POSTS } from '../../Data/postsData'
+import { POSTS, USERS } from '../../Data'
 
 const Posts:React.FC = () => {
   return (

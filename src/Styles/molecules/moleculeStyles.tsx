@@ -8,7 +8,13 @@ export const mStyles = StyleSheet.create({
     justifyContent: 'space-between',
     marginLeft: 15,
     paddingTop: 5,
-    width: '30%',
+  },
+  footerIconContainer: {
+    // backgroundColor: 'red',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginLeft: 15,
+    paddingTop: 5,
   },
   ASViewWrapper: {
     

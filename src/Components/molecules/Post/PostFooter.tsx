@@ -2,12 +2,17 @@ import { View, Text } from 'react-native'
 import React from 'react'
 
 import { styles } from '../../../Styles'
+import { IconContainer } from '../IconContainer'
+import { postFooterIcons } from '../../../Data'
 
+interface PostFooterProps {
+  width: number
+}
 
-const PostFooter:React.FC = () => {
+const PostFooter:React.FC<PostFooterProps> = ({width}) => {
   return (
     <View style={styles.rowFlexContainer}>
-      <Text style={styles.H4}>Post Footer Component Molecule</Text>
+      <IconContainer iconArray={postFooterIcons} width={90}/>
     </View>
   )
 }

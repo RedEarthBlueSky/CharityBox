@@ -3,27 +3,19 @@ import React from 'react'
 
 import { mStyles } from '../../Styles'
 import { IconButton } from '../atoms'
+import { IconDataProps } from '../../Props/Molecules'
 
-export interface IconObjectProps {
-  iconName: string
-  size: number
-  color: string
-  badge: boolean
-  unread: number
-  onPress: () => void
-}
-
-interface IconDataProps {
-  [key:string]: IconObjectProps
-}
-
-const IconContainer:React.FC<IconDataProps> = ({iconArray, onPress}:IconDataProps) => {
+const IconContainer:React.FC<IconDataProps> = ({iconArray, width}) => {
   return (
-    <View style={mStyles.iconContainer}>
+    <View style={[
+      mStyles.iconContainer, {width: `${width}%`
+      }]}
+    >
       {
         iconArray.map((icon:any, index:number) => (
           <IconButton 
-            name={icon.iconName}
+            label={icon.label}
+            iconName={icon.iconName}
             size={icon.size}
             color={icon.color}
             badge={icon.badge}

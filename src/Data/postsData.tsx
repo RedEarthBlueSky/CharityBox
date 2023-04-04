@@ -4,11 +4,11 @@ const scuba = require('../../assets/Scuba.jpeg')
 
 export const POSTS = [
   {
-    imageURL: 'https://static.wikia.nocookie.net/cyberpunk/images/e/e2/Thorton_Mackinaw_%22Warhorse%22_Database_CP2077.png/revision/latest?cb=20210127230108',
     user: USERS[0].user,
+    profile_picture: USERS[0].image,
+    imageURL: 'https://static.wikia.nocookie.net/cyberpunk/images/e/e2/Thorton_Mackinaw_%22Warhorse%22_Database_CP2077.png/revision/latest?cb=20210127230108',
     likes: 7870,
     caption: 'Happy to have my Warhorse back.',
-    profile_picture: USERS[0].image,
     comments: [
       {
         user: 'freestatetank',
@@ -25,11 +25,11 @@ export const POSTS = [
     ]
   },
   {
-    imageURL: 'https://static.wikia.nocookie.net/cyberpunk/images/9/91/We_Gotta_Live_Together.png/revision/latest/scale-to-width-down/1200?cb=20221105034402',
     user: USERS[0].user,
+    profile_picture: USERS[0].image,
+    imageURL: 'https://static.wikia.nocookie.net/cyberpunk/images/9/91/We_Gotta_Live_Together.png/revision/latest/scale-to-width-down/1200?cb=20221105034402',
     likes: 10670,
     caption: 'Back where I belong.',
-    profile_picture: USERS[0].image,
     comments: [
       {
         user: 'carsandlove',
@@ -50,11 +50,11 @@ export const POSTS = [
     ]
   },
   {
-    imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeiTxJ87WEtuF0L9aFyQOoUVTYSLTMhehTuQ&usqp=CAU',
     user: USERS[1].user,
+    profile_picture: USERS[1].image,
+    imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeiTxJ87WEtuF0L9aFyQOoUVTYSLTMhehTuQ&usqp=CAU',
     likes: 246097,
     caption: 'Once a land lubber',
-    profile_picture: USERS[1].image,
     comments: [
       {
         user: 'V',
@@ -71,11 +71,11 @@ export const POSTS = [
     ]
   },
   {
-    imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO_b462Ys0fTfbVi_MiTYJXMJVTNcWu1Nix9adUshzWTguQcICjHcaZzbUdH-WzIU2N38&usqp=CAU',
     user: USERS[1].user,
+    profile_picture: USERS[1].image,
+    imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO_b462Ys0fTfbVi_MiTYJXMJVTNcWu1Nix9adUshzWTguQcICjHcaZzbUdH-WzIU2N38&usqp=CAU',
     likes: 10670,
     caption: 'Feeling meh.',
-    profile_picture: USERS[1].image,
     comments: [
       {
         user: 'Maiko',

@@ -4,37 +4,34 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import { aStyles } from '../../../Styles'
-
-interface IconButtonProps {
-  size: number
-  name: string
-  color: string
-  badge: boolean
-  unread: number
-  onPress: () => void
-}
+import { IconButtonProps } from '../../../Props/Molecules'
 
 const IconButton:React.FC<IconButtonProps> = (
-  {size, name, color, badge, unread, onPress }
+  {label, size, iconName, color, badge, unread, onPress }
   ) => {
   return (
     <View>
       <TouchableOpacity 
-        key={name}
+        key={iconName}
         onPress={onPress}
       >
         {/* badge is true and unread does not equal 0 */}
         {badge && unread ?
-        <View style={aStyles.unreadBadge}>
-            <Text style={aStyles.unreadBadgeText}>{unread}</Text>
-        </View>
-        : null
+          <View style={aStyles.unreadBadge}>
+              <Text style={aStyles.unreadBadgeText}>{unread}</Text>
+          </View>
+          : null
         }
         {<Icon 
-          name={name} 
+          name={iconName} 
           size={size} 
           color={color} 
         />}
+        {/* a label has been provided */}
+        {label ?
+          <Text>{label}</Text>
+          : null
+        }
       </TouchableOpacity>
     </View>
   )
