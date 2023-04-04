@@ -1,13 +1,17 @@
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
 
 import { styles } from '../../../Styles'
 
+interface PostMainProps {
+  uri: string
+}
 
-const PostMain:React.FC = () => {
+
+const PostMain:React.FC<PostMainProps> = ({uri}) => {
   return (
-    <View style={styles.rowFlexContainer}>
-      <Text style={styles.H4}>Post Main Component Molecule</Text>
+    <View>
+      <Image source={{uri}} style={{width: '100%', height: 200}}/>
     </View>
   )
 }

@@ -4,7 +4,6 @@ import React from 'react'
 import { 
   HeaderComponent, 
   Stories, 
-  StoriesAutoScroll,
   Posts,
 } from '../Components/organisms'
 import { styles } from '../Styles'

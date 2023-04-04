@@ -65,7 +65,6 @@ export const styles = StyleSheet.create({
     rowFlexContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      maxWidth: '100%',
     },
     colFlex: {
       flexDirection: 'column',
